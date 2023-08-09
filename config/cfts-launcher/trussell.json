@@ -1,0 +1,82 @@
+{
+  "experimenter": "Sean",
+  "ear": "left",
+  "logging_level": "info",
+  "starship_config": {
+    "A": {
+      "ear": "either",
+      "calibration": "MMM0",
+      "gain": 40
+    },
+    "B": {
+      "ear": "not used",
+      "calibration": "MMM1",
+      "gain": 40
+    }
+  },
+  "record_cal_mic": false,
+  "cal_mic_config": {
+    "microphone": "GRAS-40DP",
+    "gain": 20,
+    "starship": "A"
+  },
+  "experiment_sequence": [
+    {
+      "label": "IEC",
+      "paradigm": "inear_speaker_calibration_chirp",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "plugins": [],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "ABR (interleaved)",
+      "paradigm": "abr_io",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - Trussell - interleaved ramp.preferences",
+      "plugins": [
+        "temperature",
+        "eeg_view",
+        "abr_inear_calibration"
+      ],
+      "modes": [
+        "Run"
+      ]
+    }
+  ],
+  "monitor_sequence": [
+    {
+      "label": "EEG",
+      "paradigm": "monitor",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\monitor\\Mouse - conventional.preferences",
+      "plugins": [
+        "temperature"
+      ],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "IEC",
+      "paradigm": "inear_speaker_calibration_chirp",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "plugins": [],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "ABR (check)",
+      "paradigm": "abr_io",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - 16 kHz conventional.preferences",
+      "plugins": [
+        "temperature",
+        "eeg_view",
+        "abr_inear_calibration"
+      ],
+      "modes": [
+        "Run"
+      ]
+    }
+  ]
+}

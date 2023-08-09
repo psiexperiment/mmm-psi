@@ -1,0 +1,140 @@
+{
+  "experimenter": "Brad",
+  "ear": "right",
+  "logging_level": "info",
+  "starship_config": {
+    "A": {
+      "ear": "right",
+      "calibration": "MMM0",
+      "gain": 40
+    },
+    "B": {
+      "ear": "left",
+      "calibration": "MMM1",
+      "gain": 40
+    }
+  },
+  "record_cal_mic": false,
+  "cal_mic_config": {
+    "microphone": "GRAS-40DP",
+    "gain": 20,
+    "starship": "A"
+  },
+  "experiment_sequence": [
+    {
+      "label": "IEC",
+      "paradigm": "inear_speaker_calibration_chirp",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "plugins": [],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "DPOAE",
+      "paradigm": "dpoae_io",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dpoae_io\\Mouse - conventional.preferences",
+      "plugins": [
+        "dpoae_inear_calibration",
+        "temperature",
+        "signal_fft_view",
+        "signal_view"
+      ],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "MEMR (Valero with chirp)",
+      "paradigm": "memr_simultaneous_chirp",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_simultaneous_chirp\\Mouse - awake.preferences",
+      "plugins": [
+        "temperature",
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "contra"
+      ]
+    },
+    {
+      "label": "MEMR (Valero with click)",
+      "paradigm": "memr_simultaneous_click",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_simultaneous_click\\Mouse - 70 dB SPL equalized.preferences",
+      "plugins": [
+        "temperature",
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "contra"
+      ]
+    },
+    {
+      "label": "MEMR (Keefe with chirp)",
+      "paradigm": "memr_interleaved_chirp",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_interleaved_chirp\\Mouse - awake - long elicitor.preferences",
+      "plugins": [
+        "temperature",
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "ipsi",
+        "contra"
+      ]
+    },
+    {
+      "label": "MEMR (Keefe with click)",
+      "paradigm": "memr_interleaved_click",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_interleaved_click\\Mouse - long elicitor.preferences",
+      "plugins": [
+        "temperature",
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "ipsi",
+        "contra"
+      ]
+    }
+  ],
+  "monitor_sequence": [
+    {
+      "label": "IEC",
+      "paradigm": "inear_speaker_calibration_chirp",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "plugins": [],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "DPOAE (check)",
+      "paradigm": "dpoae_io",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dpoae_io\\Mouse - 16 kHz check.preferences",
+      "plugins": [
+        "dpoae_inear_calibration",
+        "temperature",
+        "signal_fft_view",
+        "signal_view"
+      ],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "Dual DPOAE (check)",
+      "paradigm": "dual_dpoae_io",
+      "preference": "",
+      "plugins": [
+        "temperature",
+        "signal_fft_view",
+        "signal_view"
+      ],
+      "modes": [
+        "binaural"
+      ]
+    }
+  ]
+}
