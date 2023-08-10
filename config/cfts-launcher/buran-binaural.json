@@ -1,5 +1,4 @@
 {
-  "experimenter": "Brad",
   "ear": "right",
   "logging_level": "info",
   "starship_config": {
@@ -30,7 +29,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -39,7 +38,7 @@
     {
       "label": "DPOAE",
       "paradigm": "dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dpoae_io\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
@@ -50,10 +49,10 @@
         "Run"
       ]
     },
-	{
+    {
       "label": "Dual DPOAE",
       "paradigm": "dual_dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dual_dpoae_io\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [
         "binaural_inear_calibration",
         "temperature",
@@ -67,7 +66,7 @@
     {
       "label": "MEMR (Valero with chirp)",
       "paradigm": "memr_simultaneous_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_simultaneous_chirp\\Mouse - awake.preferences",
+      "preference": "Mouse - awake.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
@@ -79,7 +78,7 @@
     {
       "label": "MEMR (Keefe with click)",
       "paradigm": "memr_interleaved_click",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_interleaved_click\\Mouse - awake.preferences",
+      "preference": "Mouse - awake.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
@@ -94,7 +93,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -103,7 +102,7 @@
     {
       "label": "DPOAE (check)",
       "paradigm": "dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dpoae_io\\Mouse - 16 kHz check.preferences",
+      "preference": "Mouse - 16 kHz check.preferences",
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
@@ -117,7 +116,7 @@
     {
       "label": "Dual DPOAE (check)",
       "paradigm": "dual_dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dual_dpoae_io\\Mouse - 16 kHz check.preferences",
+      "preference": "Mouse - 16 kHz check.preferences",
       "plugins": [
         "temperature",
         "signal_fft_view",

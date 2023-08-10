@@ -29,7 +29,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -38,7 +38,7 @@
     {
       "label": "ABR (interleaved)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - Trussell - interleaved ramp.preferences",
+      "preference": "Mouse - Trussell - interleaved ramp.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
@@ -53,7 +53,7 @@
     {
       "label": "EEG",
       "paradigm": "monitor",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\monitor\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [
         "temperature"
       ],
@@ -64,7 +64,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -73,7 +73,7 @@
     {
       "label": "ABR (check)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - 16 kHz conventional.preferences",
+      "preference": "Mouse - 16 kHz conventional.preferences",
       "plugins": [
         "temperature",
         "eeg_view",

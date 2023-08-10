@@ -1,5 +1,4 @@
 {
-  "experimenter": "Sean",
   "ear": "left",
   "logging_level": "info",
   "starship_config": {
@@ -30,7 +29,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -39,7 +38,7 @@
     {
       "label": "DPOAE",
       "paradigm": "dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dpoae_io\\Mouse - conventional (25msec).preferences",
+      "preference": "Mouse - conventional (25msec).preferences",
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
@@ -53,7 +52,7 @@
     {
       "label": "ABR (interleaved)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - interleaved ramp.preferences",
+      "preference": "Mouse - interleaved ramp.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
@@ -66,7 +65,7 @@
     {
       "label": "ABR (16 kHz conventional)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - 16 kHz conventional.preferences",
+      "preference": "Mouse - 16 kHz conventional.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
@@ -79,7 +78,7 @@
     {
       "label": "SAM EFR (epoched)",
       "paradigm": "efr_sam_epoch",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\efr_sam_epoch\\Mouse - epoch.preferences",
+      "preference": "Mouse - epoch.preferences",
       "plugins": [
         "sam_efr_inear_calibration",
         "temperature",
@@ -94,7 +93,7 @@
     {
       "label": "RAM EFR (epoched)",
       "paradigm": "efr_ram_epoch",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\efr_ram_epoch\\Mouse - epoch.preferences",
+      "preference": "Mouse - epoch.preferences",
       "plugins": [
         "ram_efr_inear_calibration",
         "temperature",
@@ -111,7 +110,7 @@
     {
       "label": "EEG",
       "paradigm": "monitor",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\monitor\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [
         "temperature"
       ],
@@ -122,7 +121,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -131,7 +130,7 @@
     {
       "label": "ABR (check)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - 16 kHz conventional.preferences",
+      "preference": "Mouse - 16 kHz conventional.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
@@ -144,7 +143,7 @@
     {
       "label": "DPOAE (check)",
       "paradigm": "dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dpoae_io\\Mouse - 16 kHz check.preferences",
+      "preference": "Mouse - 16 kHz check.preferences",
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
