@@ -77,36 +77,6 @@
       ]
     },
     {
-      "label": "SAM EFR (continuous)",
-      "paradigm": "efr_sam_epoch",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\efr_sam_epoch\\Mouse - continuous.preferences",
-      "plugins": [
-        "sam_efr_inear_calibration",
-        "temperature",
-        "signal_view",
-        "signal_fft_view",
-        "eeg_view"
-      ],
-      "modes": [
-        "Run"
-      ]
-    },
-    {
-      "label": "RAM EFR (continuous)",
-      "paradigm": "efr_ram_epoch",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\efr_ram_epoch\\Mouse - continuous.preferences",
-      "plugins": [
-        "ram_efr_inear_calibration",
-        "temperature",
-        "signal_view",
-        "signal_fft_view",
-        "eeg_view"
-      ],
-      "modes": [
-        "Run"
-      ]
-    },
-    {
       "label": "SAM EFR (epoched)",
       "paradigm": "efr_sam_epoch",
       "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\efr_sam_epoch\\Mouse - epoch.preferences",
