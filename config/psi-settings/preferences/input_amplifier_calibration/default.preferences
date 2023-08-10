@@ -1,0 +1,24 @@
+.EpochTimeContainer.ViewBox:
+  y_max: 2.170458844103742
+  y_min: -5.828215861036073
+context:
+  meta: {}
+  parameters:
+    digital_filter_settings:
+      digital_filter:
+        expression: 'False'
+        rove: false
+      digital_highpass:
+        expression: '300'
+        rove: false
+      digital_lowpass:
+        expression: '3000'
+        rove: false
+    hardware_settings:
+      cal_amplitude:
+        rove: false
+        selected: "100 \xB5V"
+  selectors: {}
+input_amplifier_filtered_view_vb:
+  y_max: 3.0943594617859125
+  y_min: -2.4759950497978975

@@ -1,0 +1,110 @@
+context:
+  meta: {}
+  parameters:
+    acquisition:
+      f2_frequency:
+        expression: '8000'
+        rove: true
+      f2_level:
+        expression: '80'
+        rove: true
+    averaging_settings:
+      n_fft:
+        expression: '4'
+        rove: false
+      n_time:
+        expression: '16'
+        rove: false
+      response_window:
+        expression: 25e-3
+        rove: false
+    inear_calibration:
+      calibration_gain:
+        expression: '-30'
+        rove: false
+    primary_left:
+      primary_left_tone_phase:
+        expression: '0'
+        rove: false
+      primary_left_tone_polarity:
+        rove: false
+        selected: positive
+      primary_left_tone_start_time:
+        expression: '0.0'
+        rove: false
+    primary_right:
+      primary_right_tone_phase:
+        expression: '0'
+        rove: false
+      primary_right_tone_polarity:
+        rove: false
+        selected: positive
+      primary_right_tone_start_time:
+        expression: '0.0'
+        rove: false
+    primary_settings:
+      f2_f1_ratio:
+        expression: '1.2'
+        rove: false
+      l1_l2_difference:
+        expression: '10'
+        rove: false
+      max_dpoae_noise_floor:
+        expression: '0.0'
+        rove: false
+    result:
+      dpoae_noise_floor: {}
+      dpoae_spl: {}
+      f1_noise_floor: {}
+      f1_spl: {}
+      f2_noise_floor: {}
+      f2_spl: {}
+      ts_end: {}
+    secondary_left:
+      secondary_left_tone_phase:
+        expression: '0'
+        rove: false
+      secondary_left_tone_polarity:
+        rove: false
+        selected: positive
+      secondary_left_tone_start_time:
+        expression: '0.0'
+        rove: false
+    secondary_right:
+      secondary_right_tone_phase:
+        expression: '0'
+        rove: false
+      secondary_right_tone_polarity:
+        rove: false
+        selected: positive
+      secondary_right_tone_start_time:
+        expression: '0.0'
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - f2_frequency
+      - f2_level
+      context_settings:
+        f2_frequency:
+          end: 45.2
+          sequence_type: range
+          start: 5.6
+          step: 0.5
+        f2_level:
+          end: 80.0
+          sequence_type: range
+          start: 10.0
+          step: 5.0
+dpoae_io_left_viewbox:
+  y_max: 0.0
+  y_min: 0.0
+dpoae_io_right_viewbox:
+  y_max: 0.0
+  y_min: 0.0
+signal_fft_view_vb:
+  y_max: 152.20492413249275
+  y_min: -47.04485011887624
+signal_view_vb:
+  y_max: 0.2
+  y_min: -0.2

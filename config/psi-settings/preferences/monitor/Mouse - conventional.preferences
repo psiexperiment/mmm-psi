@@ -1,0 +1,31 @@
+context:
+  meta: {}
+  parameters:
+    .ContextRow:
+      amplifier_gain:
+        expression: '100000.0'
+        rove: false
+      amplifier_highpass:
+        expression: '10'
+        rove: false
+      amplifier_lowpass:
+        expression: '10000.0'
+        rove: false
+    digital_filter_settings:
+      digital_filter:
+        expression: 'True'
+        rove: false
+      digital_highpass:
+        expression: '300'
+        rove: false
+      digital_lowpass:
+        expression: '3000'
+        rove: false
+    hardware_settings:
+      input_channel:
+        rove: false
+        selected: EEG (PXI1Slot7/ai0)
+  selectors: {}
+eeg_view_vb:
+  y_max: 0.2
+  y_min: -0.2

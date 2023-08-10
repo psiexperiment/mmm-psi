@@ -1,0 +1,110 @@
+context:
+  meta: {}
+  parameters:
+    .ContextRow:
+      probe_duration:
+        expression: '0.002'
+        rove: false
+      probe_window:
+        rove: false
+        selected: hann
+    elicitor:
+      elicitor_bandlimited_noise_level:
+        expression: '60.0'
+        rove: true
+      elicitor_bandlimited_noise_polarity:
+        expression: '1'
+        rove: false
+      elicitor_equalize:
+        expression: 'False'
+        rove: false
+      elicitor_fh:
+        expression: '16000.0'
+        rove: false
+      elicitor_fl:
+        expression: '8000.0'
+        rove: false
+    hardware_settings:
+      elicitor_channel:
+        rove: false
+        selected: Left starship (primary)
+      probe_channel:
+        rove: false
+        selected: Left starship (secondary)
+    inear_calibration:
+      calibration_gain:
+        expression: '-50'
+        rove: false
+    memr:
+      elicitor_duration:
+        expression: '3'
+        rove: false
+      elicitor_onset:
+        expression: '6'
+        rove: false
+      norm_window:
+        expression: '1'
+        rove: false
+      probe_rate:
+        expression: '40'
+        rove: false
+      trial_duration:
+        expression: '11'
+        rove: false
+      trial_n:
+        expression: '6'
+        rove: false
+    microphone_channel_settings:
+      microphone_channel:
+        rove: false
+        selected: Left starship microphone (PXI1Slot3/ai0)
+      microphone_input_gain:
+        expression: '40'
+        rove: false
+    probe:
+      probe_chirp_delay:
+        expression: '0'
+        rove: false
+      probe_chirp_skip_n:
+        expression: '0'
+        rove: false
+      probe_equalize:
+        expression: 'False'
+        rove: false
+      probe_fh:
+        expression: '32000.0'
+        rove: false
+      probe_fl:
+        expression: '4000.0'
+        rove: false
+      probe_level:
+        expression: '70'
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - elicitor_bandlimited_noise_level
+      context_settings: !!python/object/new:atom.catom.atomdict
+        dictitems:
+          elicitor_bandlimited_noise_level:
+            end: 100.0
+            start: 20.0
+            step: 5.0
+memr_chirp_calibration:
+  y_max: 160.0
+  y_min: 60.0
+memr_fft_vb:
+  y_max: 42.92197686482382
+  y_min: -50.28304946596057
+probe_fft_vb:
+  y_max: 103.5961380600822
+  y_min: -72.05251744813563
+probe_time_vb:
+  y_max: 0.01376667682821168
+  y_min: -0.007712033524014927
+signal_fft_view_vb:
+  y_max: 125.76249161791179
+  y_min: -37.69172193970719
+signal_view_vb:
+  y_max: 0.01955777848619561
+  y_min: -0.020662036357705124

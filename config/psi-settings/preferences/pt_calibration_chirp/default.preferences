@@ -1,0 +1,95 @@
+cal_epoch_view:
+  y_max: 0.01
+  y_min: -0.01
+cal_fft:
+  y_max: -50.0
+  y_min: -160.0
+context:
+  meta: {}
+  parameters:
+    cal_microphone_channel_settings:
+      cal_microphone_channel:
+        rove: false
+        selected: Calibration microphone (PXI1Slot6/ai0)
+      cal_microphone_input_gain:
+        expression: '40'
+        rove: false
+    calibration:
+      cal_mic_sens_mv:
+        expression: '1'
+        rove: false
+      input_range:
+        expression: '10'
+        rove: false
+      output_channel:
+        rove: false
+        selected: Starship A (primary)
+    hardware_settings:
+      hw_ao_averages:
+        expression: '32'
+        rove: false
+      hw_ao_iti_duration:
+        expression: '0.001'
+        rove: false
+    hw_ao:
+      hw_ao_chirp_duration:
+        expression: '0.02'
+        rove: false
+      hw_ao_chirp_end_frequency:
+        expression: '50000.0'
+        rove: false
+      hw_ao_chirp_equalize:
+        rove: false
+        selected: 'yes'
+      hw_ao_chirp_level:
+        expression: '-40'
+        rove: true
+      hw_ao_chirp_start_frequency:
+        expression: '250.0'
+        rove: false
+      hw_ao_chirp_window:
+        rove: false
+        selected: Hann
+    pt_microphone_channel_settings:
+      pt_microphone_channel:
+        rove: false
+        selected: Starship A (microphone) (PXI1Slot6/ai1)
+      pt_microphone_input_gain:
+        expression: '40'
+        rove: false
+    val_level_gain:
+      safe_gain:
+        expression: '0'
+        rove: false
+      validation_level:
+        expression: '80.0'
+        rove: false
+    val_start_end:
+      validation_end:
+        expression: '50000.0'
+        rove: false
+      validation_octaves:
+        expression: '0.125'
+        rove: false
+      validation_start:
+        expression: '500.0'
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - hw_ao_chirp_level
+      order: ascending
+      settings:
+      - hw_ao_chirp_level: -40
+      - hw_ao_chirp_level: '-400'
+output.hw_ao:
+  token_name: chirp
+pt_epoch_view:
+  y_max: 0.1
+  y_min: -0.1
+pt_fft:
+  y_max: -50.0
+  y_min: -160.0
+sens:
+  y_max: 0.5
+  y_min: -0.5

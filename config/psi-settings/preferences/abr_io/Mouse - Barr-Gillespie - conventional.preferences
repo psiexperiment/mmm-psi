@@ -1,0 +1,96 @@
+context:
+  meta:
+    settings:
+    - target_tone_frequency
+    - target_tone_level
+  parameters:
+    acquisition:
+      ordering:
+        rove: false
+        selected: conventional
+    artifact_reject:
+      detrend_mode:
+        rove: false
+        selected: Constant
+      reject_mode:
+        rove: false
+        selected: absolute value
+      reject_threshold:
+        expression: '1'
+        rove: false
+    averaging:
+      alternate_polarity:
+        expression: 'True'
+        rove: false
+      averages:
+        expression: '512'
+        rove: false
+      rate:
+        expression: '40'
+        rove: false
+    digital_filter_settings:
+      digital_filter:
+        expression: 'True'
+        rove: false
+      digital_highpass:
+        expression: '300'
+        rove: false
+      digital_lowpass:
+        expression: '3000'
+        rove: false
+    inear_calibration:
+      calibration_gain:
+        expression: '-30'
+        rove: false
+    system_starship_settings:
+      system_output:
+        rove: false
+        selected: primary
+    target:
+      target_tone_burst_duration:
+        expression: 5e-3
+        rove: false
+      target_tone_burst_rise_time:
+        expression: '0.5e-3'
+        rove: false
+      target_tone_burst_start_time:
+        expression: '0.0'
+        rove: false
+      target_tone_frequency:
+        expression: '1000.0'
+        rove: true
+      target_tone_level:
+        expression: '60.0'
+        rove: true
+      target_tone_phase:
+        expression: '0'
+        rove: false
+      target_tone_polarity:
+        rove: false
+        selected: positive
+  selectors:
+    default:
+      context_item_order:
+      - target_tone_frequency
+      - target_tone_level
+      context_settings:
+        target_tone_frequency:
+          sequence_type: list
+          values:
+          - 4.0
+          - 8.0
+          - 12.0
+          - 16.0
+          - 24.0
+          - 32.0
+        target_tone_level:
+          end: 90.0
+          sequence_type: range
+          start: 10.0
+          step: 5.0
+eeg_view_vb:
+  y_max: 0.2
+  y_min: -0.2
+erp_waterfall_viewbox:
+  y_max: 3.8446272930037404
+  y_min: -1.6760815967953768

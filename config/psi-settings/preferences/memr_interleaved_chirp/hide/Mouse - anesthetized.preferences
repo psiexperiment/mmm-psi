@@ -1,0 +1,117 @@
+context:
+  meta: {}
+  parameters:
+    .ContextRow:
+      probe_duration:
+        expression: '0.002'
+        rove: false
+      probe_window:
+        rove: false
+        selected: hann
+    elicitor:
+      elicitor_bandlimited_noise_level:
+        expression: '80'
+        rove: true
+      elicitor_bandlimited_noise_polarity:
+        expression: '1'
+        rove: false
+      elicitor_equalize:
+        expression: 'False'
+        rove: false
+      elicitor_fh:
+        expression: 32e3
+        rove: false
+      elicitor_fl:
+        expression: 16e3
+        rove: false
+      elicitor_noise_delay:
+        expression: '0'
+        rove: false
+    elicitor_starship_settings:
+      elicitor_output:
+        rove: false
+        selected: primary
+    inear_calibration:
+      calibration_gain:
+        expression: '-50'
+        rove: false
+    memr:
+      analysis_window:
+        expression: '0.0464'
+        rove: false
+      elicitor_duration:
+        expression: '0.116'
+        rove: false
+      elicitor_n:
+        expression: '4'
+        rove: false
+      probe_delay:
+        expression: '0.01'
+        rove: false
+      repeat_period:
+        expression: '0.186'
+        rove: false
+      trial_n:
+        expression: '2'
+        rove: false
+      trial_period:
+        expression: 1.58*2
+        rove: false
+    probe:
+      probe_equalize:
+        expression: 'False'
+        rove: false
+      probe_fh:
+        expression: '32000.0'
+        rove: false
+      probe_fl:
+        expression: '4000.0'
+        rove: false
+      probe_level:
+        expression: '70'
+        rove: false
+    probe_starship_settings:
+      probe_output:
+        rove: false
+        selected: primary
+  selectors:
+    default:
+      context_item_order:
+      - elicitor_bandlimited_noise_level
+      context_settings:
+        elicitor_bandlimited_noise_level:
+          end: 100.0
+          sequence_type: range
+          start: 80.0
+          step: 2.0
+memr_elicitor_calibration:
+  y_max: 160.0
+  y_min: 60.0
+memr_fft_vb:
+  y_max: 1.930468308002686
+  y_min: -1.3505624803627285
+memr_probe_calibration:
+  y_max: 160.0
+  y_min: 60.0
+output.elicitor:
+  token_name: noise
+output.probe:
+  token_name: chirp
+probe_fft_vb:
+  y_max: 98.13127433882876
+  y_min: -24.395126586150532
+probe_microphone_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+probe_microphone_signal_view_vb:
+  y_max: 0.2
+  y_min: -0.2
+probe_time_vb:
+  y_max: 0.008506357610264512
+  y_min: -0.01131648766449929
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+signal_view_vb:
+  y_max: 0.02733861231637035
+  y_min: -0.01886131255032626
