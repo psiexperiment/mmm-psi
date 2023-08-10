@@ -76,31 +76,6 @@
       ]
     },
     {
-      "label": "MEMR (Valero with click)",
-      "paradigm": "memr_simultaneous_click",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_simultaneous_click\\Mouse - awake.preferences",
-      "plugins": [
-        "memr_inear_calibration",
-        "memr_microphone_signal_view"
-      ],
-      "modes": [
-        "contra"
-      ]
-    },
-    {
-      "label": "MEMR (Keefe with chirp)",
-      "paradigm": "memr_interleaved_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_interleaved_chirp\\Mouse - awake.preferences",
-      "plugins": [
-        "memr_inear_calibration",
-        "memr_microphone_signal_view"
-      ],
-      "modes": [
-        "ipsi",
-        "contra"
-      ]
-    },
-    {
       "label": "MEMR (Keefe with click)",
       "paradigm": "memr_interleaved_click",
       "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\memr_interleaved_click\\Mouse - awake.preferences",
