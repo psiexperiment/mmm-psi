@@ -53,6 +53,7 @@
 	{
       "label": "Dual DPOAE",
       "paradigm": "dual_dpoae_io",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dual_dpoae_io\\Mouse - conventional.preferences",
       "plugins": [
         "binaural_inear_calibration",
         "temperature",
@@ -116,7 +117,7 @@
     {
       "label": "Dual DPOAE (check)",
       "paradigm": "dual_dpoae_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dual_dpoae_io\\16 kHz check.preferences",
+      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\dual_dpoae_io\\Mouse - 16 kHz check.preferences",
       "plugins": [
         "temperature",
         "signal_fft_view",
