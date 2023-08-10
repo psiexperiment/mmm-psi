@@ -20,6 +20,12 @@
     "gain": 20,
     "starship": "A"
   },
+  "input_amp_config": {
+    "input_name": "grass",
+    "gain": 50000.0,
+    "freq_lb": 10,
+    "freq_ub": 10000.0
+  },
   "experiment_sequence": [
     {
       "label": "IEC",
