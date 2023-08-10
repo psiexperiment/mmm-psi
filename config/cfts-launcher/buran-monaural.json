@@ -50,6 +50,20 @@
       ]
     },
     {
+      "label": "DPGram",
+      "paradigm": "dpgram",
+      "preference": "Mouse - conventional DPgram (25msec).preferences",
+      "plugins": [
+        "dpoae_inear_calibration",
+        "temperature",
+        "signal_fft_view",
+        "signal_view"
+      ],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
       "label": "ABR (interleaved)",
       "paradigm": "abr_io",
       "preference": "Mouse - interleaved ramp.preferences",
