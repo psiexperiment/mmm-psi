@@ -6,7 +6,7 @@ context:
         expression: 'True'
         rove: false
       averages:
-        expression: '125'
+        expression: '128'
         rove: false
     digital_filter_settings:
       digital_filter:
@@ -56,7 +56,7 @@ context:
         expression: '0.0'
         rove: false
       target_tone_level:
-        expression: '80'
+        expression: 70+10*np.log10(duty_cycle)
         rove: false
       target_tone_polarity:
         rove: false
