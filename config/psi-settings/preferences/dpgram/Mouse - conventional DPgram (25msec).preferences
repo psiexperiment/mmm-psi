@@ -72,16 +72,13 @@ context:
           start: 5.6
           step: 0.125
         f2_level:
-          end: 60.0
+          end: 55.0
           sequence_type: range
-          start: 60.0
-          step: 5.0
-dpoae_io_viewbox:
-  y_max: 114.03876775563624
-  y_min: -31.923043066557888
-dpoae_threshold_view:
-  y_max: 100.0
-  y_min: -20.0
+          start: 40.0
+          step: 15.0
+dpgram_viewbox:
+  y_max: 80.51729375561692
+  y_min: -21.095765787854873
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
