@@ -6,7 +6,7 @@ context:
         expression: 'True'
         rove: false
       averages:
-        expression: '125'
+        expression: '128'
         rove: false
     digital_filter_settings:
       digital_filter:
@@ -52,6 +52,9 @@ context:
       target_sam_tone_level:
         expression: '70'
         rove: false
+      target_sam_tone_polarity:
+        expression: '1'
+        rove: false
       target_sam_tone_start_time:
         expression: '0.0'
         rove: false
@@ -60,17 +63,16 @@ context:
       context_item_order:
       - fc
       - fm
-      context_settings:
-        fc:
-          end: 32.0
-          sequence_type: range
-          start: 8.0
-          step: 1.0
-        fm:
-          end: 1000.0
-          sequence_type: range
-          start: 110.0
-          step: 890.0
+      order: ascending
+      settings:
+      - fc: 8000
+        fm: 110
+      - fc: 16000
+        fm: 110
+      - fc: 16000
+        fm: 1000
+      - fc: 32000
+        fm: 110
 eeg_fft_viewbox:
   y_max: 0.0
   y_min: -64.60804027434239
@@ -83,8 +85,8 @@ mic_segment_fft_viewbox:
 output.target:
   token_name: sam_tone
 signal_fft_view_vb:
-  y_max: 100.0
-  y_min: -10.0
+  y_max: 64.47386003809984
+  y_min: -134.77591421326912
 signal_view_vb:
   y_max: 0.2
   y_min: -0.2
