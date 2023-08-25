@@ -6,7 +6,8 @@ import numpy as np
 from psi.controller.engines.nidaq import (NIDAQEngine,
                                           NIDAQHardwareAIChannel,
                                           NIDAQHardwareAOChannel,
-                                          NIDAQHardwareAOChannel4461)
+                                          NIDAQHardwareAOChannel4461,
+                                          NIDAQHardwareCIAngPosEncoderChannel)
 from psi.controller.api import ExperimentAction, Transform
 
 from .util import connect_trigger
@@ -195,3 +196,18 @@ enamldef IOManifest(PluginManifest): manifest:
                 terminal_mode = 'pseudodifferential'
                 terminal_coupling = 'AC'
 
+        NIDAQEngine:
+            name = 'NI_pos_encoder'
+            weight = 1
+
+            NIDAQHardwareCIAngPosEncoderChannel:
+                label = 'Turntable angle'
+                name = 'turntable_angle'
+                start_trigger = START_TRIGGER
+                fs = 100e3
+                reference_clock = 'PXI_Clk10'
+                sample_clock = 'PXI1Slot7/ai/SampleClock'
+                pulses_per_revolution = 256
+                channel = 'PXISlot5/Ctr0'
+                terminal_A = 'PXI1Slot5/PFI1'
+                terminal_B = 'PXI1Slot5/PFI2'
