@@ -91,6 +91,15 @@
   ],
   "monitor_sequence": [
     {
+      "label": "Turntable",
+      "paradigm": "turntable_monitor",
+      "preference": "Mouse - conventional.preferences",
+      "plugins": [],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
       "preference": "Mouse - conventional.preferences",
