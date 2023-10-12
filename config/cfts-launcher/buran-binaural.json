@@ -38,12 +38,11 @@
     {
       "label": "DPOAE",
       "paradigm": "dpoae_io",
-      "preference": "Mouse - conventional.preferences",
+      "preference": "Mouse - conventional (25msec).preferences",
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view",
-        "signal_view"
+        "signal_fft_view"
       ],
       "modes": [
         "Run"
@@ -56,8 +55,7 @@
       "plugins": [
         "binaural_inear_calibration",
         "temperature",
-        "signal_fft_view",
-        "signal_view"
+        "signal_fft_view"
       ],
       "modes": [
         "binaural"
@@ -140,8 +138,7 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view",
-        "signal_view"
+        "signal_fft_view"
       ],
       "modes": [
         "Run"
@@ -154,7 +151,6 @@
       "plugins": [
         "temperature",
         "signal_fft_view",
-        "signal_view",
         "binaural_inear_calibration"
       ],
       "modes": [
