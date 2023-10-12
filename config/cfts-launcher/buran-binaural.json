@@ -64,7 +64,7 @@
     {
       "label": "MEMR (Keefe, click, broadband)",
       "paradigm": "memr_interleaved_click",
-      "preference": "Mouse - awake.preferences",
+      "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
@@ -77,7 +77,7 @@
     {
       "label": "MEMR (Keefe, click, high-freq)",
       "paradigm": "memr_interleaved_click",
-      "preference": "Mouse - awake.preferences",
+      "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
@@ -90,7 +90,7 @@
     {
       "label": "MEMR (Valero, chirp, broadband)",
       "paradigm": "memr_simultaneous_chirp",
-      "preference": "Mouse - awake.preferences",
+      "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
@@ -102,7 +102,7 @@
     {
       "label": "MEMR (Valero, chirp, high-freq)",
       "paradigm": "memr_simultaneous_chirp",
-      "preference": "Mouse - awake.preferences",
+      "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
