@@ -30,6 +30,10 @@ context:
       elicitor_noise_delay:
         expression: '0'
         rove: false
+    hardware_settings:
+      turntable_radius:
+        expression: '8.5'
+        rove: false
     inear_calibration:
       calibration_gain:
         expression: '-50'
@@ -38,8 +42,8 @@ context:
       analysis_window:
         expression: '0.0464'
         rove: false
-      reject_threshold:
-        expression: '50'
+      max_turntable_speed:
+        expression: '1.25'
         rove: false
     probe:
       probe_fh:
@@ -100,3 +104,6 @@ probe_fft_vb:
 probe_time_vb:
   y_max: 0.003985067476391574
   y_min: -0.004992509150248899
+turntable_linear_velocity_view_mixin_vb:
+  y_max: 5.0
+  y_min: -5.0
