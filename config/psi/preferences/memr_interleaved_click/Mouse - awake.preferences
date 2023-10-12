@@ -1,6 +1,13 @@
 context:
   meta: {}
   parameters:
+    artifact_reject:
+      max_silence_db:
+        expression: '60'
+        rove: false
+      min_probe_corr:
+        expression: '0.5'
+        rove: false
     elicitor:
       elicitor_audiogram_weighting:
         rove: false
