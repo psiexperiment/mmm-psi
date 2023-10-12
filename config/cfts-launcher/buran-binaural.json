@@ -64,7 +64,33 @@
       ]
     },
     {
-      "label": "MEMR (Valero with chirp)",
+      "label": "MEMR (Keefe, click, broadband)",
+      "paradigm": "memr_interleaved_click",
+      "preference": "Mouse - awake.preferences",
+      "plugins": [
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "ipsi",
+        "contra"
+      ]
+    },
+    {
+      "label": "MEMR (Keefe, click, high-freq)",
+      "paradigm": "memr_interleaved_click",
+      "preference": "Mouse - awake.preferences",
+      "plugins": [
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "ipsi",
+        "contra"
+      ]
+    },
+    {
+      "label": "MEMR (Valero, chirp, broadband)",
       "paradigm": "memr_simultaneous_chirp",
       "preference": "Mouse - awake.preferences",
       "plugins": [
@@ -76,15 +102,14 @@
       ]
     },
     {
-      "label": "MEMR (Keefe with click)",
-      "paradigm": "memr_interleaved_click",
+      "label": "MEMR (Valero, chirp, high-freq)",
+      "paradigm": "memr_simultaneous_chirp",
       "preference": "Mouse - awake.preferences",
       "plugins": [
         "memr_inear_calibration",
         "memr_microphone_signal_view"
       ],
       "modes": [
-        "ipsi",
         "contra"
       ]
     }
