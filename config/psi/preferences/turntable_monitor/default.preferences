@@ -1,7 +1,14 @@
 context:
   meta: {}
-  parameters: {}
+  parameters:
+    hardware_settings:
+      turntable_radius:
+        expression: '8.5e-3'
+        rove: false
   selectors: {}
-signal_view_vb:
-  y_max: 0.2
-  y_min: -0.2
+turntable_angular_velocity_view_mixin_vb:
+  y_max: 3.141592653589793
+  y_min: -3.141592653589793
+turntable_linear_velocity_view_mixin_vb:
+  y_max: 10.0
+  y_min: -10.0
