@@ -11,7 +11,7 @@ context:
     elicitor:
       elicitor_audiogram_weighting:
         rove: false
-        selected: mouse
+        selected: 'no'
       elicitor_bandlimited_noise_level:
         expression: '60.0'
         rove: true
@@ -62,7 +62,7 @@ context:
         expression: '0'
         rove: false
       probe_fh:
-        expression: 45.2e3
+        expression: 32e3
         rove: false
       probe_fl:
         expression: 4e3

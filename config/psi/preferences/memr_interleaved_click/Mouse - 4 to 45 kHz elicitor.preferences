@@ -11,7 +11,7 @@ context:
     elicitor:
       elicitor_audiogram_weighting:
         rove: false
-        selected: mouse
+        selected: 'no'
       elicitor_bandlimited_noise_level:
         expression: '80'
         rove: true
