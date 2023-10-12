@@ -25,6 +25,14 @@
     "freq_lb": 10,
     "freq_ub": 10000.0
   },
+  "standard_notes": [
+    "",
+    "baseline",
+    "1d post-exposure",
+    "2w post-exposure",
+    "pre-headplate",
+    "pre-histology"
+  ],
   "experiment_sequence": [
     {
       "label": "IEC",
@@ -33,7 +41,10 @@
       "plugins": [],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "DPOAE",
@@ -42,12 +53,14 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view",
-        "signal_view"
+        "signal_fft_view"
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "DPGram",
@@ -56,12 +69,14 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view",
-        "signal_view"
+        "signal_fft_view"
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "ABR (interleaved)",
@@ -74,7 +89,10 @@
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "SAM EFR (epoched)",
@@ -83,13 +101,15 @@
       "plugins": [
         "sam_efr_inear_calibration",
         "temperature",
-        "signal_view",
         "signal_fft_view",
         "eeg_view"
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "RAM EFR (epoched)",
@@ -98,13 +118,15 @@
       "plugins": [
         "ram_efr_inear_calibration",
         "temperature",
-        "signal_view",
         "signal_fft_view",
         "eeg_view"
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "ABR (16 kHz conventional)",
@@ -117,7 +139,10 @@
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": "16 kHz"
+      }
     }
   ],
   "monitor_sequence": [
@@ -130,7 +155,10 @@
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "IEC",
@@ -139,7 +167,10 @@
       "plugins": [],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "ABR (check)",
@@ -152,7 +183,10 @@
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     },
     {
       "label": "DPOAE (check)",
@@ -161,12 +195,14 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view",
-        "signal_view"
+        "signal_fft_view"
       ],
       "modes": [
         "Run"
-      ]
+      ],
+      "mode_notes": {
+        "Run": ""
+      }
     }
   ]
 }

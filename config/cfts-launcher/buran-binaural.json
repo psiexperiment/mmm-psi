@@ -25,6 +25,10 @@
     "freq_lb": 10,
     "freq_ub": 10000.0
   },
+  "standard_notes": [
+    "",
+    "pre-histology"
+  ],
   "experiment_sequence": [
     {
       "label": "IEC",
