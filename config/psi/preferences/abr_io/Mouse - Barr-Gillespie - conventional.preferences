@@ -16,14 +16,14 @@ context:
         rove: false
         selected: absolute value
       reject_threshold:
-        expression: '1'
+        expression: '0.75'
         rove: false
     averaging:
       alternate_polarity:
         expression: 'True'
         rove: false
       averages:
-        expression: '512'
+        expression: '256'
         rove: false
       rate:
         expression: '40'

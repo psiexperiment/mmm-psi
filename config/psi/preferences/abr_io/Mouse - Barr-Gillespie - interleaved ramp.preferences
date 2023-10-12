@@ -4,16 +4,6 @@ context:
     - target_tone_frequency
     - target_tone_level
   parameters:
-    .ContextRow:
-      amplifier_gain:
-        expression: 100e3
-        rove: false
-      amplifier_highpass:
-        expression: '10'
-        rove: false
-      amplifier_lowpass:
-        expression: '10000'
-        rove: false
     acquisition:
       ordering:
         rove: false
@@ -26,14 +16,14 @@ context:
         rove: false
         selected: absolute value
       reject_threshold:
-        expression: '1'
+        expression: '0.75'
         rove: false
     averaging:
       alternate_polarity:
         expression: 'True'
         rove: false
       averages:
-        expression: '512'
+        expression: '256'
         rove: false
       rate:
         expression: '81'
@@ -48,10 +38,6 @@ context:
       digital_lowpass:
         expression: '3000'
         rove: false
-    hardware_settings:
-      input_channel:
-        rove: false
-        selected: Starship A (microphone) (PXI1Slot6/ai1)
     inear_calibration:
       calibration_gain:
         expression: '-30'

@@ -77,19 +77,6 @@
       ]
     },
     {
-      "label": "ABR (16 kHz conventional)",
-      "paradigm": "abr_io",
-      "preference": "Mouse - 16 kHz conventional.preferences",
-      "plugins": [
-        "temperature",
-        "eeg_view",
-        "abr_inear_calibration"
-      ],
-      "modes": [
-        "Run"
-      ]
-    },
-    {
       "label": "SAM EFR (epoched)",
       "paradigm": "efr_sam_epoch",
       "preference": "Mouse - epoch.preferences",
@@ -114,6 +101,19 @@
         "signal_view",
         "signal_fft_view",
         "eeg_view"
+      ],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "ABR (16 kHz conventional)",
+      "paradigm": "abr_io",
+      "preference": "Mouse - 16 kHz conventional.preferences",
+      "plugins": [
+        "temperature",
+        "eeg_view",
+        "abr_inear_calibration"
       ],
       "modes": [
         "Run"
