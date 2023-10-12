@@ -1,11 +1,10 @@
 {
-  "experimenter": "Jenn",
   "ear": "left",
   "logging_level": "info",
   "starship_config": {
     "A": {
       "ear": "either",
-      "calibration": "#BackupSS (EPL)",
+      "calibration": "MMM0",
       "gain": 40
     },
     "B": {
@@ -30,8 +29,22 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
+      "modes": [
+        "Run"
+      ]
+    },
+    {
+      "label": "DPOAE",
+      "paradigm": "dpoae_io",
+      "preference": "Mouse - conventional (25msec).preferences",
+      "plugins": [
+        "dpoae_inear_calibration",
+        "temperature",
+        "signal_fft_view",
+        "signal_view"
+      ],
       "modes": [
         "Run"
       ]
@@ -39,7 +52,7 @@
     {
       "label": "ABR (interleaved)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - Barr-Gillespie - interleaved ramp.preferences",
+      "preference": "Mouse - Barr-Gillespie - interleaved ramp.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
@@ -52,7 +65,7 @@
     {
       "label": "ABR (conventional)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - Barr-Gillespie - conventional.preferences",
+      "preference": "Mouse - Barr-Gillespie - conventional.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
@@ -67,7 +80,7 @@
     {
       "label": "EEG",
       "paradigm": "monitor",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\monitor\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [
         "temperature"
       ],
@@ -78,7 +91,7 @@
     {
       "label": "IEC",
       "paradigm": "inear_speaker_calibration_chirp",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\inear_speaker_calibration_chirp\\Mouse - conventional.preferences",
+      "preference": "Mouse - conventional.preferences",
       "plugins": [],
       "modes": [
         "Run"
@@ -87,7 +100,7 @@
     {
       "label": "ABR (check)",
       "paradigm": "abr_io",
-      "preference": "C:\\Users\\mmm\\projects\\psi1\\data\\settings\\preferences\\abr_io\\Mouse - 16 kHz conventional.preferences",
+      "preference": "Mouse - 16 kHz conventional.preferences",
       "plugins": [
         "temperature",
         "eeg_view",
