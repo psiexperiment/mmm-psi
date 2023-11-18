@@ -31,7 +31,8 @@
     "1d post-exposure",
     "2w post-exposure",
     "pre-headplate",
-    "pre-histology"
+    "pre-histology",
+    "pilot"
   ],
   "experiment_sequence": [
     {
