@@ -71,7 +71,7 @@ context:
         fm: 110
       - fc: 32000
         fm: 110
-      - fc: 8000.0
+      - fc: 16000
         fm: 1000
 eeg_fft_viewbox:
   y_max: 0.0
