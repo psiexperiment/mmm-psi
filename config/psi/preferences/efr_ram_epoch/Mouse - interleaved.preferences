@@ -46,6 +46,9 @@ context:
       fm:
         expression: '110'
         rove: true
+      ordering:
+        rove: false
+        selected: interleaved
       target_mod_depth:
         expression: '1.0'
         rove: false
