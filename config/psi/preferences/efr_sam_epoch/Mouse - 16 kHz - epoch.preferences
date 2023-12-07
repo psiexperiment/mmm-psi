@@ -1,0 +1,85 @@
+context:
+  meta: {}
+  parameters:
+    averages:
+      alternate_polarity:
+        expression: 'True'
+        rove: false
+      averages:
+        expression: '128'
+        rove: false
+    digital_filter_settings:
+      digital_filter:
+        expression: 'False'
+        rove: false
+      digital_highpass:
+        expression: '300'
+        rove: false
+      digital_lowpass:
+        expression: '3000'
+        rove: false
+    inear_calibration:
+      calibration_gain:
+        expression: '-30'
+        rove: false
+    isi:
+      isi:
+        expression: '0.1'
+        rove: false
+      isi_jitter:
+        expression: '0.01'
+        rove: false
+    system_starship_settings:
+      system_output:
+        rove: false
+        selected: primary
+    target:
+      depth:
+        expression: '1'
+        rove: false
+      duration:
+        expression: 500e-3
+        rove: false
+      fc:
+        expression: '8000.0'
+        rove: true
+      fm:
+        expression: '110'
+        rove: true
+      target_sam_tone_equalize:
+        rove: false
+        selected: 'yes'
+      target_sam_tone_level:
+        expression: '70'
+        rove: false
+      target_sam_tone_polarity:
+        expression: '1'
+        rove: false
+      target_sam_tone_start_time:
+        expression: '0.0'
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - fc
+      - fm
+      order: ascending
+      settings:
+      - fc: 16000
+        fm: 110
+      - fc: 16000
+        fm: 1000
+eeg_fft_viewbox:
+  y_max: 0.0
+  y_min: -64.60804027434239
+eeg_view_vb:
+  y_max: 1.2323841529374806
+  y_min: -1.1448690975847011
+mic_segment_fft_viewbox:
+  y_max: 80.45744584080492
+  y_min: -5.649591417570946
+output.target:
+  token_name: sam_tone
+signal_fft_view_vb:
+  y_max: 64.47386003809984
+  y_min: -134.77591421326912
