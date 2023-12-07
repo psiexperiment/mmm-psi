@@ -10,7 +10,7 @@ context:
         rove: false
     digital_filter_settings:
       digital_filter:
-        expression: 'False'
+        expression: 'True'
         rove: false
       digital_highpass:
         expression: '300'
