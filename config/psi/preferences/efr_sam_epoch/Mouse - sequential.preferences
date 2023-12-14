@@ -80,13 +80,13 @@ eeg_fft_viewbox:
   y_max: 0.0
   y_min: -64.60804027434239
 eeg_view_vb:
-  y_max: 12.752857677420037
-  y_min: -12.838661138037354
+  y_max: 2.0188046023262487
+  y_min: -2.2872606113544585
 mic_segment_fft_viewbox:
   y_max: 80.45744584080492
   y_min: -5.649591417570946
 output.target:
   token_name: sam_tone
 signal_fft_view_vb:
-  y_max: 64.47386003809984
-  y_min: -134.77591421326912
+  y_max: 105.24817973899403
+  y_min: -4.751820261005953
