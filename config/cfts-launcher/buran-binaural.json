@@ -59,22 +59,6 @@
       }
     },
     {
-      "label": "Dual DPOAE",
-      "paradigm": "dual_dpoae_io",
-      "preference": "Mouse - conventional.preferences",
-      "plugins": [
-        "binaural_inear_calibration",
-        "temperature",
-        "signal_fft_view"
-      ],
-      "modes": [
-        "binaural"
-      ],
-      "mode_notes": {
-        "binaural": ""
-      }
-    },
-    {
       "label": "MEMR (Keefe, click, broadband)",
       "paradigm": "memr_interleaved_click",
       "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
