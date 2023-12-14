@@ -144,6 +144,22 @@
       "mode_notes": {
         "Run": "16 kHz"
       }
+    },
+    {
+      "label": "ABR (32 kHz conventional)",
+      "paradigm": "abr_io",
+      "preference": "Mouse - 32 kHz conventional.preferences",
+      "plugins": [
+        "temperature",
+        "eeg_view",
+        "abr_inear_calibration"
+      ],
+      "modes": [
+        "Run"
+      ],
+      "mode_notes": {
+        "Run": "32 kHz"
+      }
     }
   ],
   "monitor_sequence": [
