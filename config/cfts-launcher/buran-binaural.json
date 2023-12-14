@@ -179,6 +179,23 @@
       "mode_notes": {
         "binaural": ""
       }
+    },
+    {
+      "label": "MEMR (check - Keefe)",
+      "paradigm": "memr_interleaved_click",
+      "preference": "Mouse - 4 to 45 kHz elicitor check.preferences",
+      "plugins": [
+        "memr_inear_calibration",
+        "memr_microphone_signal_view"
+      ],
+      "modes": [
+        "ipsi",
+        "contra"
+      ],
+      "mode_notes": {
+        "ipsi": "ipsi 4-45kHz",
+        "contra": "contra 4-45kHz"
+      }
     }
   ]
 }
