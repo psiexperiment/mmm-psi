@@ -29,7 +29,7 @@ context:
         rove: false
     hardware_settings:
       turntable_radius:
-        expression: '8.5'
+        expression: '6.5'
         rove: false
     inear_calibration:
       calibration_gain:
@@ -43,7 +43,7 @@ context:
         expression: '2'
         rove: false
       max_turntable_speed:
-        expression: '0.5'
+        expression: '0.8'
         rove: false
       norm_window:
         expression: '2'
