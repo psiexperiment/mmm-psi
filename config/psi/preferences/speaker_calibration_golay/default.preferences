@@ -1,0 +1,75 @@
+context:
+  meta:
+    epoch_group:
+    - output_gain
+  parameters:
+    averaging:
+      discard:
+        expression: '2'
+        rove: false
+      fft_averages:
+        expression: '4'
+        rove: false
+      waveform_averages:
+        expression: '4'
+        rove: false
+    delay:
+      ab_delay:
+        expression: '2'
+        rove: false
+      iti:
+        expression: 1e-05
+        rove: false
+    golay:
+      n_bits:
+        expression: '16'
+        rove: false
+      output_gain:
+        expression: '-20'
+        rove: true
+      smoothing_window:
+        expression: '0'
+        rove: false
+    hardware_settings:
+      hw_ao_channel:
+        rove: false
+        selected: Horn
+    val_level_gain:
+      safe_gain:
+        expression: '0'
+        rove: false
+      validation_level:
+        expression: '80.0'
+        rove: false
+    val_start_end:
+      validation_end:
+        expression: 32e3
+        rove: false
+      validation_octaves:
+        expression: '0.125'
+        rove: false
+      validation_start:
+        expression: 0.5e3
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - output_gain
+      order: descending
+      settings:
+      - output_gain: '-12'
+epoch_phase_viewbox:
+  y_max: 10319.860720436227
+  y_min: -32463.609025555917
+epoch_psd_viewbox:
+  y_max: 0.0
+  y_min: -151.56947834286
+epoch_time_viewbox:
+  y_max: 0.1643485754513145
+  y_min: -0.1404336910077554
+sens_result:
+  y_max: 0.0
+  y_min: -66.80869568534683
+spl_result:
+  y_max: 127.19623356415511
+  y_min: 63.21743652551161

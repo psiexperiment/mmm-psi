@@ -1,0 +1,45 @@
+context:
+  meta: {}
+  parameters:
+    exposure:
+      exposure_broadband_noise_burst_duration:
+        expression: '30'
+        rove: false
+      exposure_broadband_noise_burst_rise_time:
+        expression: '1.0'
+        rove: false
+      exposure_broadband_noise_burst_start_time:
+        expression: '0.0'
+        rove: false
+      exposure_broadband_noise_equalize:
+        rove: false
+        selected: 'no'
+      exposure_broadband_noise_level:
+        expression: '60.0'
+        rove: false
+      exposure_broadband_noise_seed:
+        expression: '1'
+        rove: false
+    hardware:
+      exposure_channel:
+        rove: false
+        selected: Array Speaker
+    microphone_channel_settings:
+      microphone_channel:
+        rove: false
+        selected: Microphone (Dev1/ai0)
+      microphone_input_gain:
+        expression: '0'
+        rove: false
+  selectors: {}
+noise_level_container.ViewBox:
+  y_max: 118.0
+  y_min: 108.0
+output.exposure:
+  token_name: broadband_noise_burst
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+signal_view_vb:
+  y_max: 0.2
+  y_min: -0.2

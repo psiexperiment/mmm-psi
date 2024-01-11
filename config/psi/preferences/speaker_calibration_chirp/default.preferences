@@ -1,0 +1,74 @@
+context:
+  meta:
+    epoch_group:
+    - hw_ao_chirp_level
+  parameters:
+    hardware_settings:
+      hw_ao_averages:
+        expression: '32'
+        rove: false
+      hw_ao_channel:
+        rove: false
+        selected: Horn
+      hw_ao_iti_duration:
+        expression: '0.001'
+        rove: false
+    hw_ao:
+      hw_ao_chirp_duration:
+        expression: '0.02'
+        rove: false
+      hw_ao_chirp_end_frequency:
+        expression: '35000'
+        rove: false
+      hw_ao_chirp_equalize:
+        rove: false
+        selected: 'no'
+      hw_ao_chirp_level:
+        expression: '-40'
+        rove: true
+      hw_ao_chirp_start_frequency:
+        expression: '500'
+        rove: false
+      hw_ao_chirp_window:
+        rove: false
+        selected: Hann
+    val_level_gain:
+      safe_gain:
+        expression: '0'
+        rove: false
+      validation_level:
+        expression: '80.0'
+        rove: false
+    val_start_end:
+      validation_end:
+        expression: 35e3
+        rove: false
+      validation_octaves:
+        expression: '0.125'
+        rove: false
+      validation_start:
+        expression: 0.5e3
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - hw_ao_chirp_level
+      order: ascending
+      settings:
+      - hw_ao_chirp_level: '-12'
+      - hw_ao_chirp_level: '-400'
+epoch_phase_viewbox:
+  y_max: 100.0
+  y_min: -800.0
+epoch_psd_viewbox:
+  y_max: 0.5
+  y_min: -0.5
+epoch_time_viewbox:
+  y_max: 0.0
+  y_min: 0.0
+sens_result:
+  y_max: 0.5
+  y_min: -0.5
+spl_result:
+  y_max: 0.5
+  y_min: -0.5
