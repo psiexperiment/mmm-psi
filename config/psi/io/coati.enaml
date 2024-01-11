@@ -1,0 +1,81 @@
+from enaml.workbench.api import Extension, PluginManifest
+from enaml.workbench.core.api import Command
+
+
+from psiaudio.calibration import FlatCalibration
+from psiaudio.util import dbi
+from psi.controller.api import ExperimentAction
+from psi.controller.engines.nidaq import (connect_trigger,
+                                          NIDAQEngine,
+                                          NIDAQHardwareAIChannel,
+                                          NIDAQHardwareAOChannel)
+
+from cftscal.api import speaker_manager
+
+AI_MODE = 'differential'
+
+
+enamldef IOManifest(PluginManifest): manifest:
+
+    Extension:
+        id = 'coati_commands'
+        point = 'enaml.workbench.core.commands'
+
+        Command:
+            id = 'coati.connect_trigger'
+            handler = lambda e: connect_trigger(e.workbench.get_plugin('psi.controller'))
+
+    Extension:
+        id = 'coati_actions'
+        point = 'psi.controller.actions'
+
+        ExperimentAction:
+            event = 'experiment_prepare'
+            command = 'coati.connect_trigger'
+            weight = 90
+
+    Extension:
+        id = 'backend'
+        point = 'psi.controller.io'
+
+        NIDAQEngine: engine:
+            name = 'NI'
+            master_clock = True
+
+            hw_ai_monitor_period = 1
+            hw_ao_monitor_period = 1
+
+            NIDAQHardwareAOChannel:
+                label = 'Array'
+                name = 'speaker_array'
+                channel = 'Dev1/ao0'
+                fs = 100e3
+                expected_range = (-10, 10)
+                dtype = 'float64'
+                terminal_mode = 'RSE'
+                filter_delay = 0
+                calibration_user_editable = False
+                #calibration = FlatCalibration.from_db(88, vrms=dbi(-9))
+                calibration = speaker_manager.get_object('array').get_current_calibration().load()
+
+            NIDAQHardwareAOChannel:
+                label = 'Horn'
+                name = 'speaker_horn'
+                channel = 'Dev1/ao1'
+                fs = 100e3
+                expected_range = (-10, 10)
+                dtype = 'float64'
+                terminal_mode = 'RSE'
+                filter_delay = 0
+                calibration = speaker_manager.get_object('horn').get_current_calibration().load()
+                calibration_user_editable = False
+
+            NIDAQHardwareAIChannel:
+                label = 'Monitor'
+                name = 'microphone_monitor'
+                channel = 'Dev1/ai0'
+                fs = 100e3
+                expected_range = (-10, 10)
+                dtype = 'float64'
+                terminal_mode = AI_MODE
+                start_trigger = 'ao/StartTrigger'

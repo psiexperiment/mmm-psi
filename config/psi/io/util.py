@@ -19,17 +19,24 @@ def connect_trigger(event):
 
     ai_channels = []
     ao_channels = []
+    ci_channels = []
+    co_channels = []
     for engine in list(controller._engines.values())[::-1]:
-        hw_ai = engine.get_channels(direction='in', timing='hw', active=True)
-        hw_ao = engine.get_channels(direction='out', timing='hw', active=True)
+        hw_ai = engine.get_channels(mode='analog', direction='in', timing='hw', active=True)
+        hw_ao = engine.get_channels(mode='analog', direction='out', timing='hw', active=True)
+        hw_ci = engine.get_channels(mode='counter', direction='in', timing='hw', active=True)
+        hw_co = engine.get_channels(mode='counter', direction='out', timing='hw', active=True)
         ai_channels.extend(hw_ai)
         ao_channels.extend(hw_ao)
+        ci_channels.extend(hw_ci)
+        co_channels.extend(hw_co)
 
-    channels = ai_channels + ao_channels
+    # For now, we are ignoring the ci_channels and co_channels.
+    channels = ai_channels + ao_channels + ci_channels
 
     # If no channels are active, we don't have any sync issues.
-    log.info('No channels are active.')
     if len(channels) == 0:
+        log.info('No channels are active.')
         return
 
     # If only one channel is active, we don't have any sync issues.
@@ -38,6 +45,9 @@ def connect_trigger(event):
         channels[0].start_trigger = ''
         return
 
+    # At least with the NI hardware I'm familiar with, counter channels require
+    # an external clock (e.g., provided by an analog input our output task).
+    # So, we cannot use the co_channel or ci_channel for setting the start trigger.
     if ao_channels:
         c = ao_channels[0]
         direction = 'ao'
