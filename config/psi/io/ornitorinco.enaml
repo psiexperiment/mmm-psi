@@ -6,7 +6,7 @@ from enaml.workbench.core.api import Command
 
 import numpy as np
 
-from psi.controller.engines.nidaq import (connect_triger,
+from psi.controller.engines.nidaq import (connect_trigger,
                                           NIDAQEngine,
                                           NIDAQHardwareAIChannel,
                                           NIDAQHardwareAOChannel,
