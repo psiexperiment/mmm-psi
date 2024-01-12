@@ -49,7 +49,7 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view"
+        "microphone_fft_view"
       ],
       "modes": [
         "Run"
@@ -155,7 +155,7 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view"
+        "microphone_fft_view"
       ],
       "modes": [
         "Run"
@@ -170,7 +170,7 @@
       "preference": "Mouse - 16 kHz check.preferences",
       "plugins": [
         "temperature",
-        "signal_fft_view",
+        "microphone_fft_view",
         "binaural_inear_calibration"
       ],
       "modes": [

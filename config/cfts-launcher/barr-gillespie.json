@@ -42,7 +42,7 @@
       "plugins": [
         "dpoae_inear_calibration",
         "temperature",
-        "signal_fft_view",
+        "microphone_fft_view",
         "signal_view"
       ],
       "modes": [
