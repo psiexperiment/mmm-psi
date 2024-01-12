@@ -84,7 +84,7 @@ context:
           end: 80.0
           sequence_type: range
           start: 20.0
-          step: 10.0
+          step: 20.0
 memr_fft_vb:
   y_max: 4.949888243587021
   y_min: -4.609268455352825
