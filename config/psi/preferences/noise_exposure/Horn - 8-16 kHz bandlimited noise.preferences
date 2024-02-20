@@ -11,6 +11,9 @@ context:
       exposure_bandlimited_fir_noise_burst_start_time:
         expression: '0'
         rove: false
+      exposure_bandlimited_noise_audiogram_weighting:
+        rove: false
+        selected: none
       exposure_bandlimited_noise_equalize:
         rove: false
         selected: 'yes'
@@ -23,24 +26,23 @@ context:
       exposure_bandlimited_noise_level:
         expression: '100'
         rove: false
+      exposure_bandlimited_noise_max_correction:
+        expression: '20'
+        rove: false
       exposure_bandlimited_noise_polarity:
         expression: '1'
         rove: false
       exposure_bandlimited_noise_seed:
         expression: '1'
         rove: false
-    hardware:
+    hardware_settings:
       exposure_channel:
         rove: false
         selected: Horn
-    microphone_channel_settings:
-      microphone_channel:
-        rove: false
-        selected: Microphone (Dev1/ai0)
   selectors: {}
 noise_level_container.ViewBox:
-  y_max: 118.0
-  y_min: 108.0
+  y_max: 106.64154648282648
+  y_min: 93.18286309958519
 output.exposure:
   token_name: bandlimited_fir_noise_burst
 signal_fft_view_vb:
