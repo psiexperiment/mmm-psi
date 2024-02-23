@@ -178,7 +178,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 expected_range = (-10, 10)
                 dtype = 'float64'
                 terminal_mode = 'pseudodifferential'
-                terminal_coupling = 'DC'
+                terminal_coupling = 'AC'
                 unit = 'V'
 
             NIDAQHardwareAIChannel:
