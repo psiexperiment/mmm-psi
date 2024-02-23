@@ -129,6 +129,12 @@
         "ipsi": "ipsi 4-45kHz",
         "contra": "contra 4-45kHz"
       }
+    },
+    {
+      "paradigm": "memr_sweep_click",
+      "preference": "Mouse - awake.preferences",
+      "plugins": [],
+      "mode_notes": {}
     }
   ],
   "sequences": {
