@@ -1,0 +1,94 @@
+context:
+  meta: {}
+  parameters:
+    .ContextRow:
+      max_level:
+        expression: '80'
+        rove: false
+      ramp_rate:
+        expression: '17.5'
+        rove: false
+      trial_iti:
+        expression: '1'
+        rove: false
+      trial_n:
+        expression: '2'
+        rove: false
+    elicitor:
+      elicitor_audiogram_weighting:
+        rove: false
+        selected: 'no'
+      elicitor_bandlimited_noise_polarity:
+        expression: '1'
+        rove: false
+      elicitor_bandlimited_noise_seed:
+        expression: '1'
+        rove: false
+      elicitor_fh:
+        expression: 32e3
+        rove: false
+      elicitor_fl:
+        expression: 4e3
+        rove: false
+      elicitor_max_equalize:
+        expression: '20'
+        rove: false
+      elicitor_noise_envelope:
+        rove: false
+        selected: bartlett
+      elicitor_noise_rise_time:
+        expression: None
+        rove: false
+      elicitor_noise_start_time:
+        expression: '0.0'
+        rove: false
+      elicitor_noise_transform:
+        expression: None
+        rove: false
+    hardware_settings:
+      turntable_radius:
+        expression: '8.5'
+        rove: false
+    memr:
+      max_turntable_speed:
+        expression: '0.5'
+        rove: false
+      probe_rate:
+        expression: '20'
+        rove: false
+    probe:
+      probe_bandlimited_click_audiogram_weighting:
+        rove: false
+        selected: none
+      probe_click_delay:
+        expression: '0'
+        rove: false
+      probe_click_skip_n:
+        expression: '0'
+        rove: false
+      probe_fh:
+        expression: 32e3
+        rove: false
+      probe_fl:
+        expression: 4e3
+        rove: false
+      probe_level:
+        expression: '75'
+        rove: false
+      probe_max_equalize:
+        expression: '20'
+        rove: false
+  selectors: {}
+output.elicitor:
+  token_name: noise
+output.probe:
+  token_name: click
+output_monitor_view_fft_plot_vb:
+  y_max: 100.0
+  y_min: -10.0
+output_monitor_view_time_plot_vb:
+  y_max: 0.2
+  y_min: -0.2
+turntable_linear_velocity_view_mixin_vb:
+  y_max: 5.0
+  y_min: -5.0
