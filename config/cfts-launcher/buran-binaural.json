@@ -90,6 +90,16 @@
       "mode_notes": {
         "contra": "22-45kHz"
       }
+    },
+    {
+      "paradigm": "memr_sweep_click",
+      "preference": "Mouse - awake.preferences",
+      "plugins": [
+        "memr_microphone_signal_view"
+      ],
+      "mode_notes": {
+        "contra": "sweep 4-45kHz"
+      }
     }
   ],
   "monitor_sequence": [
@@ -133,7 +143,10 @@
     {
       "paradigm": "memr_sweep_click",
       "preference": "Mouse - awake.preferences",
-      "plugins": [],
+      "plugins": [
+        "memr_microphone_signal_view",
+        "memr_microphone_signal_fft_view"
+      ],
       "mode_notes": {}
     }
   ],
