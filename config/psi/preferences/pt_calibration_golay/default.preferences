@@ -12,10 +12,10 @@ context:
         expression: '2'
         rove: false
       fft_averages:
-        expression: '4'
+        expression: '8'
         rove: false
       waveform_averages:
-        expression: '4'
+        expression: '8'
         rove: false
     delay:
       ab_delay:
@@ -59,7 +59,7 @@ context:
     default:
       context_item_order:
       - output_gain
-      order: ascending
+      order: descending
       settings:
       - n_bits: 14
         output_gain: '-20'
@@ -71,5 +71,5 @@ pt_fft:
   y_max: 9.834987669470689
   y_min: -138.21052954618355
 sens:
-  y_max: 170.62249963456978
-  y_min: 106.64370259592633
+  y_max: 238.37387415441498
+  y_min: 174.39507711577153
