@@ -1,29 +1,14 @@
 context:
   meta: {}
   parameters:
-    input:
-      input_channel:
-        rove: false
-        selected: Calibration microphone (PXI1Slot6/ai0)
-      input_gain:
-        expression: '20'
-        rove: false
-      input_range:
-        expression: '10'
-        rove: false
-      reference_frequency:
-        expression: '1000.0'
-        rove: false
-      reference_level:
-        expression: '114'
-        rove: false
+    hardware_settings:
       sample_duration:
         expression: '10'
         rove: false
   selectors: {}
 signal_fft_view_vb:
-  y_max: 100.0
-  y_min: -10.0
+  y_max: -4.328218367420738
+  y_min: -203.5779926187897
 signal_view_vb:
-  y_max: 0.2
-  y_min: -0.2
+  y_max: 0.052923071790896635
+  y_min: -0.037660013576453245
