@@ -3,14 +3,21 @@ context:
     epoch_group:
     - hw_ao_chirp_level
   parameters:
-    hardware_settings:
+    .ContextRow:
       hw_ao_averages:
         expression: '32'
         rove: false
       hw_ao_iti_duration:
         expression: '0.001'
         rove: false
+    hardware_settings:
+      smoothing_window:
+        expression: '10'
+        rove: false
     hw_ao:
+      hw_ao_chirp_audiogram_weighting:
+        rove: false
+        selected: none
       hw_ao_chirp_duration:
         expression: '0.02'
         rove: false
@@ -23,6 +30,9 @@ context:
       hw_ao_chirp_level:
         expression: '-40'
         rove: true
+      hw_ao_chirp_max_correction:
+        expression: '20'
+        rove: false
       hw_ao_chirp_start_frequency:
         expression: '250.0'
         rove: false
@@ -57,7 +67,8 @@ context:
       order: ascending
       settings:
       - hw_ao_chirp_level: -40
-      - hw_ao_chirp_level: '-400'
+      - hw_ao_chirp_level: -50
+      - hw_ao_chirp_level: -400
 epoch_phase_viewbox:
   y_max: 100.0
   y_min: -800.0
