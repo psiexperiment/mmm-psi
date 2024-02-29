@@ -4,7 +4,7 @@
   "starship_config": {
     "A": {
       "ear": "either",
-      "calibration": "MMM0",
+      "calibration": "MMM3",
       "gain": 40
     },
     "B": {
