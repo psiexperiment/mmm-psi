@@ -93,12 +93,13 @@
     },
     {
       "paradigm": "memr_sweep_click",
-      "preference": "Mouse - awake.preferences",
+      "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
+        "memr_microphone_signal_fft_view",
         "memr_microphone_signal_view"
       ],
       "mode_notes": {
-        "contra": "sweep 4-45kHz"
+        "contra": "4-45kHz"
       }
     }
   ],
@@ -139,15 +140,6 @@
         "ipsi": "ipsi 4-45kHz",
         "contra": "contra 4-45kHz"
       }
-    },
-    {
-      "paradigm": "memr_sweep_click",
-      "preference": "Mouse - awake.preferences",
-      "plugins": [
-        "memr_microphone_signal_view",
-        "memr_microphone_signal_fft_view"
-      ],
-      "mode_notes": {}
     }
   ],
   "sequences": {
@@ -264,6 +256,19 @@
         ],
         "mode_notes": {
           "contra": "22-45kHz"
+        },
+        "mode": "contra",
+        "ear": "left"
+      },
+      {
+        "paradigm": "memr_sweep_click",
+        "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
+        "plugins": [
+          "memr_microphone_signal_fft_view",
+          "memr_microphone_signal_view"
+        ],
+        "mode_notes": {
+          "contra": "4-45kHz"
         },
         "mode": "contra",
         "ear": "left"
