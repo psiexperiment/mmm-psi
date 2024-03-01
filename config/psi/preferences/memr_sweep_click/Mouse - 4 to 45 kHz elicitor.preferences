@@ -9,7 +9,7 @@ context:
         expression: '17.5'
         rove: false
       trial_iti:
-        expression: '1.14'
+        expression: '0'
         rove: false
       trial_n:
         expression: '25'
