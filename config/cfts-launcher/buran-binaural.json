@@ -95,8 +95,8 @@
       "paradigm": "memr_sweep_click",
       "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_fft_view",
-        "memr_microphone_signal_view"
+        "memr_microphone_signal_view",
+        "memr_microphone_signal_fft_view"
       ],
       "mode_notes": {
         "contra": "4-45kHz"
@@ -264,8 +264,8 @@
         "paradigm": "memr_sweep_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_fft_view",
-          "memr_microphone_signal_view"
+          "memr_microphone_signal_view",
+          "memr_microphone_signal_fft_view"
         ],
         "mode_notes": {
           "contra": "4-45kHz"

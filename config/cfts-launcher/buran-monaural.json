@@ -34,7 +34,7 @@
     "pre-histology",
     "pilot"
   ],
-  "current_sequence_name": "DPOAE",
+  "current_sequence_name": "full assay (anesthetized)",
   "experiment_sequence": [
     {
       "paradigm": "inear_speaker_calibration_chirp",
@@ -48,8 +48,6 @@
       "paradigm": "dpoae_io",
       "preference": "Mouse - conventional (25msec).preferences",
       "plugins": [
-        "dpoae_inear_calibration",
-        "temperature",
         "microphone_fft_view"
       ],
       "mode_notes": {
@@ -60,8 +58,6 @@
       "paradigm": "dpgram",
       "preference": "Mouse - conventional DPgram (25msec).preferences",
       "plugins": [
-        "dpoae_inear_calibration",
-        "temperature",
         "microphone_fft_view"
       ],
       "mode_notes": {
@@ -72,9 +68,7 @@
       "paradigm": "abr_io",
       "preference": "Mouse - interleaved ramp.preferences",
       "plugins": [
-        "temperature",
-        "eeg_view",
-        "abr_inear_calibration"
+        "eeg_view"
       ],
       "mode_notes": {
         "run": ""
@@ -84,10 +78,8 @@
       "paradigm": "efr_sam_epoch",
       "preference": "Mouse - sequential.preferences",
       "plugins": [
-        "sam_efr_inear_calibration",
-        "temperature",
-        "microphone_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -97,10 +89,8 @@
       "paradigm": "efr_ram_epoch",
       "preference": "Mouse - sequential.preferences",
       "plugins": [
-        "ram_efr_inear_calibration",
-        "temperature",
-        "microphone_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -110,9 +100,7 @@
       "paradigm": "abr_io",
       "preference": "Mouse - 32 kHz conventional.preferences",
       "plugins": [
-        "temperature",
-        "eeg_view",
-        "abr_inear_calibration"
+        "eeg_view"
       ],
       "mode_notes": {
         "run": "32 kHz"
@@ -122,9 +110,7 @@
       "paradigm": "abr_io",
       "preference": "Mouse - 16 kHz conventional.preferences",
       "plugins": [
-        "temperature",
-        "eeg_view",
-        "abr_inear_calibration"
+        "eeg_view"
       ],
       "mode_notes": {
         "run": "16 kHz"
@@ -135,9 +121,7 @@
     {
       "paradigm": "monitor",
       "preference": "Mouse - conventional.preferences",
-      "plugins": [
-        "temperature"
-      ],
+      "plugins": [],
       "mode_notes": {
         "run": ""
       }
@@ -154,9 +138,7 @@
       "paradigm": "abr_io",
       "preference": "Mouse - 16 kHz conventional.preferences",
       "plugins": [
-        "temperature",
-        "eeg_view",
-        "abr_inear_calibration"
+        "eeg_view"
       ],
       "mode_notes": {
         "run": ""
@@ -166,8 +148,6 @@
       "paradigm": "dpoae_io",
       "preference": "Mouse - 16 kHz check.preferences",
       "plugins": [
-        "dpoae_inear_calibration",
-        "temperature",
         "microphone_fft_view"
       ],
       "mode_notes": {
@@ -230,8 +210,8 @@
         "paradigm": "efr_ram_epoch",
         "preference": "Mouse - sequential.preferences",
         "plugins": [
-          "microphone_fft_view",
-          "eeg_view"
+          "eeg_view",
+          "microphone_fft_view"
         ],
         "mode_notes": {},
         "mode": "run",
