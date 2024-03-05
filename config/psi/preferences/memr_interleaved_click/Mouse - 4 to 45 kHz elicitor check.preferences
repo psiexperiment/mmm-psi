@@ -86,8 +86,8 @@ context:
           start: 20.0
           step: 20.0
 memr_fft_vb:
-  y_max: 4.949888243587021
-  y_min: -4.609268455352825
+  y_max: 11.826222941950292
+  y_min: -11.47760741569474
 memr_microphone_signal_view_vb:
   y_max: 0.06168620010794891
   y_min: -0.06515198790165799
@@ -102,8 +102,8 @@ probe_fft_vb:
   y_max: 98.13127433882876
   y_min: -24.395126586150532
 probe_time_vb:
-  y_max: 0.003985067476391574
-  y_min: -0.004992509150248899
+  y_max: 0.017357924107030673
+  y_min: -0.022285577062013798
 turntable_linear_velocity_view_mixin_vb:
   y_max: 5.0
   y_min: -5.0
