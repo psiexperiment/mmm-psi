@@ -43,7 +43,7 @@ context:
         expression: '0.0464'
         rove: false
       max_turntable_speed:
-        expression: '0.8'
+        expression: '1.0'
         rove: false
     probe:
       probe_fh:

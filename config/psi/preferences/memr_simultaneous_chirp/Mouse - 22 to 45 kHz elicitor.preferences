@@ -43,7 +43,7 @@ context:
         expression: '2'
         rove: false
       max_turntable_speed:
-        expression: '0.8'
+        expression: '1.0'
         rove: false
       norm_window:
         expression: '2'
