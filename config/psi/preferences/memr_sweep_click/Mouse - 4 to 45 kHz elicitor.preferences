@@ -5,6 +5,9 @@ context:
       max_level:
         expression: '80'
         rove: false
+      min_level:
+        expression: '10'
+        rove: false
       ramp_rate:
         expression: '17.5'
         rove: false
@@ -25,7 +28,7 @@ context:
         expression: '1'
         rove: false
       elicitor_fh:
-        expression: 32e3
+        expression: 45.2e3
         rove: false
       elicitor_fl:
         expression: 4e3
@@ -42,12 +45,9 @@ context:
       elicitor_noise_start_time:
         expression: '0.0'
         rove: false
-      elicitor_noise_transform:
-        expression: None
-        rove: false
     hardware_settings:
       turntable_radius:
-        expression: '8.5'
+        expression: '6.5'
         rove: false
     inear_calibration:
       calibration_gain:
@@ -55,7 +55,7 @@ context:
         rove: false
     memr:
       max_turntable_speed:
-        expression: '6.5'
+        expression: '1'
         rove: false
       probe_rate:
         expression: '20'
