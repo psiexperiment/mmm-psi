@@ -29,7 +29,7 @@
     "",
     "pre-histology"
   ],
-  "current_sequence_name": "MEMR assay (awake)",
+  "current_sequence_name": "pre-MEMR assay (awake)",
   "experiment_sequence": [
     {
       "paradigm": "inear_speaker_calibration_chirp",
@@ -148,7 +148,9 @@
         "paradigm": "inear_speaker_calibration_chirp",
         "preference": "Mouse - conventional.preferences",
         "plugins": [],
-        "mode_notes": {},
+        "mode_notes": {
+          "run": "head-fixed"
+        },
         "mode": "run",
         "ear": "left"
       },
@@ -156,7 +158,9 @@
         "paradigm": "inear_speaker_calibration_chirp",
         "preference": "Mouse - conventional.preferences",
         "plugins": [],
-        "mode_notes": {},
+        "mode_notes": {
+          "run": "head-fixed"
+        },
         "mode": "run",
         "ear": "right"
       },
