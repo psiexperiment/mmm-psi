@@ -13,5 +13,5 @@ context:
         rove: false
   selectors: {}
 eeg_view_vb:
-  y_max: 3.3695806488256097
-  y_min: -4.430260457879429
+  y_max: 2.9998607960600454
+  y_min: -2.795536037791747
