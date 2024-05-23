@@ -4,16 +4,6 @@ context:
     - target_tone_frequency
     - target_tone_level
   parameters:
-    .ContextRow:
-      amplifier_gain:
-        expression: 100e3
-        rove: false
-      amplifier_highpass:
-        expression: '10'
-        rove: false
-      amplifier_lowpass:
-        expression: '10000'
-        rove: false
     acquisition:
       ordering:
         rove: false
@@ -26,7 +16,7 @@ context:
         rove: false
         selected: absolute value
       reject_threshold:
-        expression: '1'
+        expression: '1.5'
         rove: false
     averaging:
       alternate_polarity:
@@ -36,7 +26,7 @@ context:
         expression: '512'
         rove: false
       rate:
-        expression: '81'
+        expression: '80'
         rove: false
     digital_filter_settings:
       digital_filter:
@@ -48,10 +38,6 @@ context:
       digital_lowpass:
         expression: '3000'
         rove: false
-    hardware_settings:
-      input_channel:
-        rove: false
-        selected: EEG (PXI1Slot7/ai0)
     inear_calibration:
       calibration_gain:
         expression: '-30'
@@ -96,7 +82,7 @@ context:
         target_tone_level:
           end: 90.0
           sequence_type: range
-          start: 10.0
+          start: 0.0
           step: 5.0
 eeg_view_vb:
   y_max: 0.2
