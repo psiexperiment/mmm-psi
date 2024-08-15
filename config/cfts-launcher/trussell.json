@@ -4,12 +4,12 @@
   "starship_config": {
     "A": {
       "ear": "either",
-      "calibration": "#BackupSS_LT (EPL)",
+      "calibration": "MMM5",
       "gain": 40
     },
     "B": {
       "ear": "not used",
-      "calibration": "#BackupSS_LT (EPL)",
+      "calibration": "MMM5",
       "gain": 40
     }
   },

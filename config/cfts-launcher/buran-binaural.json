@@ -4,7 +4,7 @@
   "starship_config": {
     "A": {
       "ear": "right",
-      "calibration": "MMM0",
+      "calibration": "MMM5",
       "gain": 40
     },
     "B": {
@@ -359,9 +359,9 @@
         "paradigm": "memr_sweep_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "psivideo",
+          "memr_microphone_signal_view",
           "memr_microphone_signal_fft_view",
-          "memr_microphone_signal_view"
+          "psivideo"
         ],
         "mode_notes": {
           "contra": "4-45kHz"
