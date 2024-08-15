@@ -6,7 +6,7 @@ context:
         expression: '60'
         rove: false
       min_probe_corr:
-        expression: '0.5'
+        expression: '0.9'
         rove: false
     elicitor:
       elicitor_audiogram_weighting:
