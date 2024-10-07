@@ -28,7 +28,7 @@
   "standard_notes": [
     ""
   ],
-  "current_sequence_name": "",
+  "current_sequence_name": "Hui",
   "experiment_sequence": [
     {
       "paradigm": "inear_speaker_calibration_chirp",
@@ -67,5 +67,26 @@
       "mode_notes": {}
     }
   ],
-  "sequences": {}
+  "sequences": {
+    "Hui": [
+      {
+        "paradigm": "inear_speaker_calibration_chirp",
+        "preference": "Mouse - conventional.preferences",
+        "plugins": [],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "abr_io",
+        "preference": "Mouse - Trussell - interleaved ramp.preferences",
+        "plugins": [
+          "eeg_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      }
+    ]
+  }
 }
