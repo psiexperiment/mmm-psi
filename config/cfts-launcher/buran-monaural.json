@@ -78,8 +78,8 @@
       "paradigm": "efr_sam_epoch",
       "preference": "Mouse - sequential.preferences",
       "plugins": [
-        "microphone_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -89,8 +89,8 @@
       "paradigm": "efr_ram_epoch",
       "preference": "Mouse - sequential.preferences",
       "plugins": [
-        "microphone_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -115,6 +115,14 @@
       "mode_notes": {
         "run": "16 kHz"
       }
+    },
+    {
+      "paradigm": "abr_io_click",
+      "preference": "Mouse - conventional.preferences",
+      "plugins": [
+        "eeg_view"
+      ],
+      "mode_notes": {}
     }
   ],
   "monitor_sequence": [
@@ -153,6 +161,12 @@
       "mode_notes": {
         "run": ""
       }
+    },
+    {
+      "paradigm": "abr_io_click",
+      "preference": "Mouse - conventional.preferences",
+      "plugins": [],
+      "mode_notes": {}
     }
   ],
   "sequences": {
@@ -199,8 +213,8 @@
         "paradigm": "efr_sam_epoch",
         "preference": "Mouse - sequential.preferences",
         "plugins": [
-          "microphone_fft_view",
-          "eeg_view"
+          "eeg_view",
+          "microphone_fft_view"
         ],
         "mode_notes": {},
         "mode": "run",
@@ -210,8 +224,8 @@
         "paradigm": "efr_ram_epoch",
         "preference": "Mouse - sequential.preferences",
         "plugins": [
-          "microphone_fft_view",
-          "eeg_view"
+          "eeg_view",
+          "microphone_fft_view"
         ],
         "mode_notes": {},
         "mode": "run",
