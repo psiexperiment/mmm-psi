@@ -30,7 +30,7 @@ context:
         rove: false
         selected: alternating
       rate:
-        expression: '80'
+        expression: '40'
         rove: false
     digital_filter_settings:
       digital_filter:
@@ -64,6 +64,9 @@ context:
           sequence_type: range
           start: 10.0
           step: 5.0
+eeg_view_vb:
+  y_max: 0.2
+  y_min: -0.2
 erp_waterfall_viewbox:
   y_max: 5.0
   y_min: -5.0

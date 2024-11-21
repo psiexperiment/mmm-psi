@@ -97,6 +97,14 @@
       }
     },
     {
+      "paradigm": "abr_io_click",
+      "preference": "Mouse - conventional.preferences",
+      "plugins": [
+        "eeg_view"
+      ],
+      "mode_notes": {}
+    },
+    {
       "paradigm": "abr_io",
       "preference": "Mouse - 32 kHz conventional.preferences",
       "plugins": [
@@ -115,14 +123,6 @@
       "mode_notes": {
         "run": "16 kHz"
       }
-    },
-    {
-      "paradigm": "abr_io_click",
-      "preference": "Mouse - conventional.preferences",
-      "plugins": [
-        "eeg_view"
-      ],
-      "mode_notes": {}
     }
   ],
   "monitor_sequence": [
@@ -161,12 +161,6 @@
       "mode_notes": {
         "run": ""
       }
-    },
-    {
-      "paradigm": "abr_io_click",
-      "preference": "Mouse - conventional.preferences",
-      "plugins": [],
-      "mode_notes": {}
     }
   ],
   "sequences": {
@@ -227,6 +221,14 @@
           "eeg_view",
           "microphone_fft_view"
         ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "abr_io_click",
+        "preference": "Mouse - conventional.preferences",
+        "plugins": [],
         "mode_notes": {},
         "mode": "run",
         "ear": "selected"
