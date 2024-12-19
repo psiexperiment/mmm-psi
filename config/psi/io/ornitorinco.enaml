@@ -201,7 +201,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 name = 'turntable_angle'
                 fs = 60
                 pulses_per_revolution = 256
-                channel = '/PXI1Slot5/Ctr0'
-                terminal_A = '/PXI1Slot5/PFI1'
-                terminal_B = '/PXI1Slot5/PFI2'
-                clock_channel = '/PXI1Slot5/Ctr1'
+                channel = '/PXI1Slot2/Ctr0'
+                terminal_A = '/PXI1Slot2/PFI1'
+                terminal_B = '/PXI1Slot2/PFI2'
+                clock_channel = '/PXI1Slot2/Ctr1'
