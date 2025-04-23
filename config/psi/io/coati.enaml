@@ -54,9 +54,6 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_mode = 'RSE'
                 filter_delay = 0
-                calibration_user_editable = False
-                #calibration = FlatCalibration.from_db(88, vrms=dbi(-9))
-                calibration = speaker_manager.get_object('array').get_current_calibration().load()
 
             NIDAQHardwareAOChannel:
                 label = 'Horn'
@@ -67,8 +64,6 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_mode = 'RSE'
                 filter_delay = 0
-                calibration = speaker_manager.get_object('horn').get_current_calibration().load()
-                calibration_user_editable = False
 
             NIDAQHardwareAIChannel:
                 label = 'Monitor'
