@@ -22,7 +22,7 @@ context:
         rove: false
     golay:
       n_bits:
-        expression: '16'
+        expression: '14'
         rove: false
       output_gain:
         expression: '-20'
@@ -30,16 +30,12 @@ context:
       smoothing_window:
         expression: '0'
         rove: false
-    hardware_settings:
-      hw_ao_channel:
-        rove: false
-        selected: Horn
     val_level_gain:
       safe_gain:
         expression: '0'
         rove: false
       validation_level:
-        expression: '80.0'
+        expression: '60'
         rove: false
     val_start_end:
       validation_end:
@@ -57,7 +53,8 @@ context:
       - output_gain
       order: descending
       settings:
-      - output_gain: '-12'
+      - output_gain: -15
+      - output_gain: -400
 epoch_phase_viewbox:
   y_max: 10319.860720436227
   y_min: -32463.609025555917
