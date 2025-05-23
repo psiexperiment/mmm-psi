@@ -12,6 +12,9 @@ context:
         expression: '3000'
         rove: false
   selectors: {}
+eeg_fft_view_vb:
+  y_max: 48.10960873088896
+  y_min: -99.93590848476532
 eeg_view_vb:
-  y_max: 2.9998607960600454
-  y_min: -2.795536037791747
+  y_max: 2.216466157842463
+  y_min: -2.089599055838246
