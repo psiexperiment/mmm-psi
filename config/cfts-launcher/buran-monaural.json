@@ -4,20 +4,20 @@
   "starship_config": {
     "A": {
       "ear": "either",
-      "calibration": "MMM5",
-      "gain": 40
+      "gain": 40,
+      "calibration": "MMM6"
     },
     "B": {
       "ear": "not used",
-      "calibration": "MMM0",
-      "gain": 40
+      "gain": 40,
+      "calibration": "MMM0"
     }
   },
   "record_cal_mic": false,
   "cal_mic_config": {
-    "microphone": "GRAS-40DP",
     "gain": 20,
-    "starship": "A"
+    "starship": "A",
+    "microphone": "GRAS-40DP"
   },
   "input_amp_config": {
     "input_name": "grass",

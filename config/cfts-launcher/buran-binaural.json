@@ -4,20 +4,20 @@
   "starship_config": {
     "A": {
       "ear": "right",
-      "calibration": "MMM5",
-      "gain": 40
+      "gain": 40,
+      "calibration": "MMM6"
     },
     "B": {
       "ear": "left",
-      "calibration": "MMM0",
-      "gain": 40
+      "gain": 40,
+      "calibration": "MMM0"
     }
   },
   "record_cal_mic": false,
   "cal_mic_config": {
-    "microphone": "GRAS-40DP",
     "gain": 20,
-    "starship": "A"
+    "starship": "A",
+    "microphone": "GRAS-40DP"
   },
   "input_amp_config": {
     "input_name": "grass",
@@ -45,8 +45,8 @@
       "paradigm": "dpoae_io",
       "preference": "Mouse - conventional (25msec).preferences",
       "plugins": [
-        "microphone_fft_view",
-        "psivideo"
+        "psivideo",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": "head-fixed"
@@ -56,8 +56,8 @@
       "paradigm": "memr_interleaved_click",
       "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
-        "psivideo"
+        "psivideo",
+        "memr_microphone_signal_view"
       ],
       "mode_notes": {
         "ipsi": "ipsi 4-45kHz",
@@ -68,8 +68,8 @@
       "paradigm": "memr_interleaved_click",
       "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
-        "psivideo"
+        "psivideo",
+        "memr_microphone_signal_view"
       ],
       "mode_notes": {
         "ipsi": "ipsi 22-45kHz",
@@ -80,8 +80,8 @@
       "paradigm": "memr_simultaneous_chirp",
       "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
-        "psivideo"
+        "psivideo",
+        "memr_microphone_signal_view"
       ],
       "mode_notes": {
         "contra": "4-45kHz"
@@ -91,8 +91,8 @@
       "paradigm": "memr_simultaneous_chirp",
       "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
-        "psivideo"
+        "psivideo",
+        "memr_microphone_signal_view"
       ],
       "mode_notes": {
         "contra": "22-45kHz"
@@ -102,8 +102,8 @@
       "paradigm": "memr_sweep_click",
       "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
         "memr_microphone_signal_fft_view",
+        "memr_microphone_signal_view",
         "psivideo"
       ],
       "mode_notes": {
@@ -114,8 +114,8 @@
       "paradigm": "memr_sweep_click",
       "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
         "memr_microphone_signal_fft_view",
+        "memr_microphone_signal_view",
         "psivideo"
       ],
       "mode_notes": {
@@ -156,8 +156,8 @@
       "paradigm": "memr_interleaved_click",
       "preference": "Mouse - 4 to 45 kHz elicitor check.preferences",
       "plugins": [
-        "memr_microphone_signal_view",
-        "psivideo"
+        "psivideo",
+        "memr_microphone_signal_view"
       ],
       "mode_notes": {
         "ipsi": "ipsi 4-45kHz",
@@ -195,8 +195,8 @@
         "paradigm": "dpoae_io",
         "preference": "Mouse - conventional (25msec).preferences",
         "plugins": [
-          "microphone_fft_view",
-          "psivideo"
+          "psivideo",
+          "microphone_fft_view"
         ],
         "mode_notes": {
           "run": "head-fixed"
@@ -208,8 +208,8 @@
         "paradigm": "dpoae_io",
         "preference": "Mouse - conventional (25msec).preferences",
         "plugins": [
-          "microphone_fft_view",
-          "psivideo"
+          "psivideo",
+          "microphone_fft_view"
         ],
         "mode_notes": {
           "run": "head-fixed"
@@ -223,8 +223,8 @@
         "paradigm": "memr_interleaved_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "ipsi": "ipsi 4-45kHz"
@@ -236,8 +236,8 @@
         "paradigm": "memr_interleaved_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "contra": "contra 4-45kHz",
@@ -250,8 +250,8 @@
         "paradigm": "memr_interleaved_click",
         "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "contra": "",
@@ -264,8 +264,8 @@
         "paradigm": "memr_interleaved_click",
         "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "contra": "contra 22-45kHz"
@@ -277,8 +277,8 @@
         "paradigm": "memr_simultaneous_chirp",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "contra": "4-45kHz"
@@ -290,8 +290,8 @@
         "paradigm": "memr_simultaneous_chirp",
         "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "contra": "22-45kHz"
@@ -303,8 +303,8 @@
         "paradigm": "memr_sweep_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
           "memr_microphone_signal_fft_view",
+          "memr_microphone_signal_view",
           "psivideo"
         ],
         "mode_notes": {
@@ -317,8 +317,8 @@
         "paradigm": "memr_sweep_click",
         "preference": "Mouse - 22 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
           "memr_microphone_signal_fft_view",
+          "memr_microphone_signal_view",
           "psivideo"
         ],
         "mode_notes": {
@@ -333,8 +333,8 @@
         "paradigm": "memr_interleaved_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "ipsi": "ipsi 4-45kHz"
@@ -346,8 +346,8 @@
         "paradigm": "memr_interleaved_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
-          "psivideo"
+          "psivideo",
+          "memr_microphone_signal_view"
         ],
         "mode_notes": {
           "contra": "contra 4-45kHz"
@@ -359,8 +359,8 @@
         "paradigm": "memr_sweep_click",
         "preference": "Mouse - 4 to 45 kHz elicitor.preferences",
         "plugins": [
-          "memr_microphone_signal_view",
           "memr_microphone_signal_fft_view",
+          "memr_microphone_signal_view",
           "psivideo"
         ],
         "mode_notes": {
