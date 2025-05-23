@@ -1,0 +1,100 @@
+IR_sensors:
+  y_max: 5.0
+  y_min: 0.0
+context:
+  meta:
+    trial_log: []
+  parameters:
+    results:
+      correct: {}
+      response: {}
+      response_time: {}
+      response_ts: {}
+      score: {}
+      trial_start: {}
+      trial_type: {}
+    trial:
+      hold_duration:
+        expression: '0.0'
+        rove: false
+      iti_duration:
+        expression: '0.1'
+        rove: false
+      keep_lights_on:
+        expression: 'False'
+        rove: false
+      manual_control:
+        expression: 'False'
+        rove: false
+      np_duration:
+        expression: '0.25'
+        rove: false
+      repeat_incorrect:
+        rove: false
+        selected: 'Yes'
+      response_duration:
+        expression: '3.0'
+        rove: false
+      target_delay:
+        expression: '0.5'
+        rove: false
+      to_duration:
+        expression: '1.0'
+        rove: false
+      training_mode:
+        expression: 'False'
+        rove: false
+  selectors: {}
+event_log:
+  column_widths:
+    event: 100
+    info: 100
+    timestamp: 100
+signal_monitor.fft_view_vb:
+  y_max: 5.113785228290155
+  y_min: -263.05017735485757
+signal_monitor.view_vb:
+  y_max: 0.10749086581184782
+  y_min: -0.11333748978011697
+trial_log:
+  column_config:
+    correct:
+      width: 49
+    hold_duration:
+      width: 84
+    iti_duration:
+      width: 71
+    keep_lights_on:
+      width: 90
+    manual_control:
+      width: 93
+    np_duration:
+      width: 74
+    np_start:
+      width: 112
+    repeat_incorrect:
+      width: 101
+    response:
+      width: 73
+    response_duration:
+      width: 110
+    response_side:
+      width: 85
+    response_start:
+      width: 112
+    response_time:
+      width: 89
+    response_ts:
+      width: 73
+    score:
+      width: 39
+    target_delay:
+      width: 77
+    to_duration:
+      width: 72
+    training_mode:
+      width: 88
+    trial_number:
+      width: 79
+    trial_start:
+      width: 112
