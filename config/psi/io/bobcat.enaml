@@ -1,0 +1,141 @@
+# Ensure ASIO backend is enabled
+import os
+os.environ['SD_ENABLE_ASIO'] = '1'
+
+
+from enaml.workbench.api import PluginManifest, Extension
+
+from psi.controller.api import ADC, ContinuousInput, TimedTrigger, Trigger, Toggle
+from psi.controller.engines.nidaq import (
+    NIDAQEngine,
+    NIDAQHardwareAIChannel,
+    NIDAQSoftwareDOChannel
+)
+from psi.controller.engines.soundcard.standard_io import (
+    ASIOFirefaceUSBEngine,
+    SoundcardHardwareAIChannel,
+    SoundcardHardwareAOChannel,
+)
+
+
+enamldef IRChannel(NIDAQHardwareAIChannel): irc:
+    '''
+    Set up a channel designed to recieve input from our IR sensors.
+    '''
+    unit = 'V'
+    expected_range = (0, 5)
+    dtype = 'float64'
+    terminal_coupling = 'DC'
+    terminal_mode = 'RSE'
+
+    ADC: adc:
+        name << irc.name
+        threshold = 2.5
+
+
+enamldef IOManifest(PluginManifest): manifest:
+    # Since most soundcards do not support DC-coupled analog inputs or outputs,
+    # anything that is expected to have a DC component in it (e.g., IR sensors)
+    # is offloaded to a NI card. The devices are synchronized using the WORD
+    # clock output fo the sound card.
+
+    Extension:
+        id = 'bobcat_backend'
+        point = 'psi.controller.io'
+
+        ASIOFirefaceUSBEngine: sound_card:
+            master_clock = True
+
+            SoundcardHardwareAIChannel:
+                channel = 0
+                label = 'Monitor'
+                name = 'microphone_1'
+                dBFS = (13, 'dBu')
+
+                ContinuousInput:
+                    name = 'microphone_1'
+
+            SoundcardHardwareAIChannel:
+                # This is a loopback that allows us to monitor the exact signal
+                # sent to the speaker.
+                channel = 12
+                label = 'Overhead Loopback'
+                name = 'loopback_1'
+                dBFS = (13, 'dBu')
+
+                ContinuousInput:
+                    name = 'loopback_1'
+
+            SoundcardHardwareAOChannel:
+                channel = 0
+                label = 'Overhead'
+                name = 'speaker_1'
+
+            SoundcardHardwareAOChannel:
+                channel = 1
+                label = 'TTL'
+                name = 'sync_trigger'
+
+                TimedTrigger:
+                    # This is a hardware-timed trigger that allows us to
+                    # schedule a trigger to occur at a very precise sample (as
+                    # opposed to Trigger, which is software-timed and accuracy
+                    # of timing is not guaranteed). This sync trigger is
+                    # required for synchronizing with other devices.
+                    name = 'sync_trigger'
+
+        NIDAQEngine:
+            # The sound card WORD clock should be connected to Dev1/PFI0. When
+            # setting the sample clock, we need to provide the sample clock
+            # rate as well.
+            name = 'NI_misc'
+            hw_ai_monitor_period = 0.125
+            weight = 1
+
+            IRChannel:
+                label = 'Nose poke'
+                name = 'np_contact'
+                channel = 'Dev1/ai0'
+                fs = sound_card.fs
+                sample_clock = '/Dev1/PFI0'
+
+            IRChannel:
+                label = 'Response 1'
+                name = 'resp_contact_1'
+                channel = 'Dev1/ai1'
+                fs = sound_card.fs
+                sample_clock = '/Dev1/PFI0'
+
+            IRChannel:
+                label = 'Response 2'
+                name = 'resp_contact_2'
+                channel = 'Dev1/ai2'
+                fs = sound_card.fs
+                sample_clock = '/Dev1/PFI0'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line0'
+                label = 'Room Light'
+                name = 'room_light'
+
+                Toggle:
+                    # This is used to control the state of the room light.
+                    name = 'room_light'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line1'
+                label = 'Pellet 1'
+                name = 'pellet_1'
+
+                Trigger:
+                    # This is used to trigger a pellet dispense.
+                    name = 'pellet_1'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line2'
+                label = 'Pellet 2'
+                name = 'pellet_2'
+
+                Trigger:
+                    # This is used to trigger a pellet dispense.
+                    name = 'pellet_2'
