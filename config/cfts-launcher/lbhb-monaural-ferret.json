@@ -1,0 +1,118 @@
+{
+  "ear": "left",
+  "logging_level": "info",
+  "starship_config": {
+    "A": {
+      "ear": "either",
+      "gain": 40,
+      "calibration": "MMM1"
+    },
+    "B": {
+      "ear": "not used",
+      "gain": 40,
+      "calibration": "MMM0"
+    }
+  },
+  "record_cal_mic": false,
+  "cal_mic_config": {
+    "gain": 20,
+    "starship": "A",
+    "microphone": "GRAS-40DP"
+  },
+  "input_amp_config": {
+    "input_name": "grass",
+    "gain": 50000.0,
+    "freq_lb": 10,
+    "freq_ub": 10000.0
+  },
+  "standard_notes": [
+    "",
+    "baseline",
+    "1d post-exposure",
+    "2w post-exposure",
+    "pre-headplate",
+    "pre-histology",
+    "pilot"
+  ],
+  "current_sequence_name": "",
+  "experiment_sequence": [
+    {
+      "paradigm": "inear_speaker_calibration_chirp",
+      "preference": "Gerbil - conventional.preferences",
+      "plugins": [],
+      "mode_notes": {
+        "run": ""
+      }
+    },
+    {
+      "paradigm": "dpoae_io",
+      "preference": "Gerbil - 4 kHz check.preferences",
+      "plugins": [
+        "microphone_fft_view"
+      ],
+      "mode_notes": {
+        "run": ""
+      }
+    },
+    {
+      "paradigm": "dpgram",
+      "preference": "Ferret - conventional DPgram (25msec).preferences",
+      "plugins": [
+        "microphone_fft_view"
+      ],
+      "mode_notes": {
+        "run": ""
+      }
+    },
+    {
+      "paradigm": "abr_io",
+      "preference": "Ferret - interleaved ramp.preferences",
+      "plugins": [
+        "eeg_view"
+      ],
+      "mode_notes": {
+        "run": ""
+      }
+    }
+  ],
+  "monitor_sequence": [
+    {
+      "paradigm": "monitor",
+      "preference": "Gerbil - conventional.preferences",
+      "plugins": [],
+      "mode_notes": {
+        "run": ""
+      }
+    },
+    {
+      "paradigm": "inear_speaker_calibration_chirp",
+      "preference": "Gerbil - conventional.preferences",
+      "plugins": [],
+      "mode_notes": {
+        "run": ""
+      }
+    },
+    {
+      "paradigm": "abr_io",
+      "preference": "Gerbil - 4 kHz conventional.preferences",
+      "plugins": [
+        "eeg_view",
+        "eeg_fft_view"
+      ],
+      "mode_notes": {
+        "run": ""
+      }
+    },
+    {
+      "paradigm": "dpoae_io",
+      "preference": "Gerbil - 4 kHz check.preferences",
+      "plugins": [
+        "microphone_fft_view"
+      ],
+      "mode_notes": {
+        "run": ""
+      }
+    }
+  ],
+  "sequences": {}
+}
