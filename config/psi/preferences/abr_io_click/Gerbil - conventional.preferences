@@ -1,0 +1,72 @@
+abr_click_calibration.psd:
+  y_max: 160.0
+  y_min: 60.0
+abr_click_calibration.waveform:
+  y_max: 160.0
+  y_min: 60.0
+context:
+  meta:
+    settings:
+    - target_click_level
+  parameters:
+    artifact_reject:
+      detrend_mode:
+        rove: false
+        selected: Do not
+      reject_mode:
+        rove: false
+        selected: absolute value
+      reject_threshold:
+        expression: '2.5'
+        rove: false
+    averaging:
+      averages:
+        expression: '512'
+        rove: false
+      click_duration:
+        expression: 100e-6
+        rove: false
+      click_polarity:
+        rove: false
+        selected: alternating
+      rate:
+        expression: '40'
+        rove: false
+    digital_filter_settings:
+      digital_filter:
+        expression: 'True'
+        rove: false
+      digital_highpass:
+        expression: '300'
+        rove: false
+      digital_lowpass:
+        expression: '3000'
+        rove: false
+    inear_calibration:
+      calibration_gain:
+        expression: '-40'
+        rove: false
+    system_starship_settings:
+      system_output:
+        rove: false
+        selected: primary
+    target:
+      target_click_level:
+        expression: '1'
+        rove: true
+  selectors:
+    default:
+      context_item_order:
+      - target_click_level
+      context_settings:
+        target_click_level:
+          end: 80.0
+          sequence_type: range
+          start: 10.0
+          step: 5.0
+eeg_view_vb:
+  y_max: 0.2
+  y_min: -0.2
+erp_waterfall_viewbox:
+  y_max: 5.0
+  y_min: -5.0

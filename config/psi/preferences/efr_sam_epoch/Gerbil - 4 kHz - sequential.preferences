@@ -1,0 +1,82 @@
+context:
+  meta: {}
+  parameters:
+    averages:
+      alternate_polarity:
+        expression: 'True'
+        rove: false
+      averages:
+        expression: '128'
+        rove: false
+    digital_filter_settings:
+      digital_filter:
+        expression: 'True'
+        rove: false
+      digital_highpass:
+        expression: '300'
+        rove: false
+      digital_lowpass:
+        expression: '3000'
+        rove: false
+    inear_calibration:
+      calibration_gain:
+        expression: '-30'
+        rove: false
+    isi:
+      isi:
+        expression: '0.1'
+        rove: false
+      isi_jitter:
+        expression: '0.01'
+        rove: false
+    system_starship_settings:
+      system_output:
+        rove: false
+        selected: primary
+    target:
+      depth:
+        expression: '1'
+        rove: false
+      duration:
+        expression: 500e-3
+        rove: false
+      fc:
+        expression: '8000.0'
+        rove: true
+      fm:
+        expression: '110'
+        rove: true
+      ordering:
+        rove: false
+        selected: sequential
+      target_sam_tone_equalize:
+        rove: false
+        selected: 'yes'
+      target_sam_tone_level:
+        expression: '70'
+        rove: false
+      target_sam_tone_polarity:
+        expression: '1'
+        rove: false
+      target_sam_tone_start_time:
+        expression: '0.0'
+        rove: false
+  selectors:
+    default:
+      context_item_order:
+      - fc
+      - fm
+      order: descending
+      settings:
+      - fc: 4000
+        fm: 110
+      - fc: 4000
+        fm: 1000
+eeg_view_vb:
+  y_max: 2.0188046023262487
+  y_min: -2.2872606113544585
+microphone_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+output.target:
+  token_name: sam_tone
