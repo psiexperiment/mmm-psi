@@ -46,8 +46,8 @@ enamldef IOManifest(PluginManifest): manifest:
             hw_ao_monitor_period = 1
 
             NIDAQHardwareAOChannel:
-                label = 'Array'
-                name = 'speaker_array'
+                label = 'A'
+                name = 'speaker_A'
                 channel = 'Dev1/ao0'
                 fs = 100e3
                 expected_range = (-10, 10)
@@ -56,8 +56,8 @@ enamldef IOManifest(PluginManifest): manifest:
                 filter_delay = 0
 
             NIDAQHardwareAOChannel:
-                label = 'Horn'
-                name = 'speaker_horn'
+                label = 'B'
+                name = 'speaker_B'
                 channel = 'Dev1/ao1'
                 fs = 100e3
                 expected_range = (-10, 10)
