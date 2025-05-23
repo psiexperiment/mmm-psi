@@ -67,10 +67,8 @@ enamldef IOManifest(PluginManifest): manifest:
                 unit = 'V'
 
             NIDAQHardwareAIChannel:
-                # Output is 50 mV at 35 degrees Centigrade, 150 mV at 40
-                # degrees Centigrade. 25 mV/C between 35 and 40.
-                label = 'Temperature'
-                name = 'temperature_channel'
+                label = 'AM Systems 1800 (ch. 2)'
+                name = 'amplifier_am1800_ch2'
                 channel = 'PXI1Slot7/ai1'
                 fs = 100e3
                 reference_clock = 'PXI_Clk10'
@@ -80,9 +78,6 @@ enamldef IOManifest(PluginManifest): manifest:
                 terminal_coupling = 'DC'
                 unit = 'V'
 
-                Transform:
-                    name = 'temperature'
-                    function = mv_to_C
 
         ########################################################
         # Starship A plus calibration mic.
@@ -193,7 +188,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 terminal_coupling = 'AC'
 
         NIDAQEngine:
-            name = 'NI_pos_encoder'
+            name = 'NI_aux'
             weight = 1
 
             NIDAQHardwareCIAngPosEncoderChannel:
@@ -205,3 +200,22 @@ enamldef IOManifest(PluginManifest): manifest:
                 terminal_A = '/PXI1Slot2/PFI1'
                 terminal_B = '/PXI1Slot2/PFI2'
                 clock_channel = '/PXI1Slot2/Ctr1'
+
+            NIDAQHardwareAIChannel:
+                # Output is 50 mV at 35 degrees Centigrade, 150 mV at 40
+                # degrees Centigrade. 25 mV/C between 35 and 40.
+                label = 'Temperature'
+                name = 'temperature_channel'
+                channel = 'PXI1Slot2/ai0'
+                fs = 100e3
+                reference_clock = 'PXI_Clk10'
+                expected_range = (-10, 10)
+                dtype = 'float64'
+                terminal_mode = 'differential'
+                terminal_coupling = 'DC'
+                unit = 'V'
+
+                Transform:
+                    name = 'temperature'
+                    function = mv_to_C
+
