@@ -1,0 +1,49 @@
+context:
+  meta: {}
+  parameters:
+    exposure:
+      exposure_bandlimited_fir_noise_burst_duration:
+        expression: 60*60*2
+        rove: false
+      exposure_bandlimited_fir_noise_burst_rise_time:
+        expression: '1.0'
+        rove: false
+      exposure_bandlimited_fir_noise_burst_start_time:
+        expression: '0'
+        rove: false
+      exposure_bandlimited_noise_audiogram_weighting:
+        rove: false
+        selected: none
+      exposure_bandlimited_noise_equalize:
+        rove: false
+        selected: 'yes'
+      exposure_bandlimited_noise_fh:
+        expression: 2.8e3
+        rove: false
+      exposure_bandlimited_noise_fl:
+        expression: 1.4e3
+        rove: false
+      exposure_bandlimited_noise_level:
+        expression: 115+12
+        rove: false
+      exposure_bandlimited_noise_max_correction:
+        expression: '20'
+        rove: false
+      exposure_bandlimited_noise_polarity:
+        expression: '1'
+        rove: false
+      exposure_bandlimited_noise_seed:
+        expression: '1'
+        rove: false
+  selectors: {}
+microphone_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+microphone_signal_view_vb:
+  y_max: 0.2
+  y_min: -0.2
+noise_level_container.ViewBox:
+  y_max: 106.64154648282648
+  y_min: 93.18286309958519
+output.exposure:
+  token_name: bandlimited_fir_noise_burst
