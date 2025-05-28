@@ -1,4 +1,4 @@
-# Ensure ASIO backend is enabled
+# Ensure ASIO backend is enabled. This is important!
 import os
 os.environ['SD_ENABLE_ASIO'] = '1'
 
@@ -56,6 +56,15 @@ enamldef IOManifest(PluginManifest): manifest:
                     name = 'microphone_1'
 
             SoundcardHardwareAIChannel:
+                channel = 3
+                label = 'Calibration'
+                name = 'microphone_calibration'
+                dBFS = (13, 'dBu')
+
+                ContinuousInput:
+                    name = 'microphone_calibration'
+
+            SoundcardHardwareAIChannel:
                 # This is a loopback that allows us to monitor the exact signal
                 # sent to the speaker.
                 channel = 12
@@ -85,9 +94,9 @@ enamldef IOManifest(PluginManifest): manifest:
                     name = 'sync_trigger'
 
         NIDAQEngine:
-            # The sound card WORD clock should be connected to Dev1/PFI0. When
-            # setting the sample clock, we need to provide the sample clock
-            # rate as well.
+            # The sound card WORD clock output should be connected to
+            # Dev1/PFI0. When setting the sample clock, we need to provide the
+            # sample clock rate as well.
             name = 'NI_misc'
             hw_ai_monitor_period = 0.125
             weight = 1
