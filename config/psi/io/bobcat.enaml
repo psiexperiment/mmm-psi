@@ -5,7 +5,10 @@ os.environ['SD_ENABLE_ASIO'] = '1'
 
 from enaml.workbench.api import PluginManifest, Extension
 
-from psi.controller.api import ADC, ContinuousInput, TimedTrigger, Trigger, Toggle
+from psi.controller.api import (
+    ADC, ContinuousInput, Edges, TimedTrigger, Threshold, Trigger,
+    Toggle
+)
 from psi.controller.engines.nidaq import (
     NIDAQEngine,
     NIDAQHardwareAIChannel,
@@ -18,6 +21,13 @@ from psi.controller.engines.soundcard.standard_io import (
 )
 
 
+# Actual frequency of word clock. See https://docs.rme-audio.com/m1620/440-1t_word_single/.
+FIREFACE_WORD_CLOCK = 48000
+
+# Frequency to set Fireface to.
+FIREFACE_FS = 96000
+
+
 enamldef IRChannel(NIDAQHardwareAIChannel): irc:
     '''
     Set up a channel designed to recieve input from our IR sensors.
@@ -27,10 +37,13 @@ enamldef IRChannel(NIDAQHardwareAIChannel): irc:
     dtype = 'float64'
     terminal_coupling = 'DC'
     terminal_mode = 'RSE'
+    start_trigger = '/Dev1/PFI1'
+    sample_clock = '/Dev1/PFI0'
 
     ADC: adc:
-        name << irc.name
-        threshold = 2.5
+        name << parent.name
+        threshold = 1.75
+        target_fs = 100
 
 
 enamldef IOManifest(PluginManifest): manifest:
@@ -45,45 +58,62 @@ enamldef IOManifest(PluginManifest): manifest:
 
         ASIOFirefaceUSBEngine: sound_card:
             master_clock = True
+            #fs = FIREFACE_FREQUENCY
+
+            # 4193 for AO to AI via hardwired connection, 4180 via internal loopback.
+            latency_samples = 4180
+
+            # Hardwired loopback is output 5 to input 6. Trigger is output 2 to
+            # NI input ACH3.
 
             SoundcardHardwareAIChannel:
                 channel = 0
-                label = 'Monitor'
+                label = 'Microphone 1'
                 name = 'microphone_1'
                 dBFS = (13, 'dBu')
-
-                ContinuousInput:
-                    name = 'microphone_1'
+                supported_devices = ['generic_microphone']
 
             SoundcardHardwareAIChannel:
-                channel = 3
-                label = 'Calibration'
-                name = 'microphone_calibration'
+                channel = 1
+                label = 'Measurement Microphone'
+                name = 'measurement_microphone'
                 dBFS = (13, 'dBu')
-
-                ContinuousInput:
-                    name = 'microphone_calibration'
+                supported_devices = ['measurement_microphone']
 
             SoundcardHardwareAIChannel:
                 # This is a loopback that allows us to monitor the exact signal
-                # sent to the speaker.
+                # sent to the channel.
                 channel = 12
-                label = 'Overhead Loopback'
+                label = 'Speaker 1 Loopback'
                 name = 'loopback_1'
                 dBFS = (13, 'dBu')
 
+            SoundcardHardwareAIChannel:
+                # This is a loopback that allows us to monitor the exact signal
+                # sent to the channel.
+                channel = 13
+                label = 'TTL Loopback'
+                name = 'loopback_ttl'
+                dBFS = (13, 'dBu')
+
                 ContinuousInput:
-                    name = 'loopback_1'
+                    name = 'loopback_ttl'
+
+                Threshold:
+                    threshold = 2.5
+
+                    Edges:
+                        name = 'loopback_ttl_edges'
 
             SoundcardHardwareAOChannel:
                 channel = 0
-                label = 'Overhead'
+                label = 'Speaker 1'
                 name = 'speaker_1'
+                supported_devices = ['speaker']
 
             SoundcardHardwareAOChannel:
                 channel = 1
-                label = 'TTL'
-                name = 'sync_trigger'
+                name = 'sync_trigger_out'
 
                 TimedTrigger:
                     # This is a hardware-timed trigger that allows us to
@@ -91,7 +121,17 @@ enamldef IOManifest(PluginManifest): manifest:
                     # opposed to Trigger, which is software-timed and accuracy
                     # of timing is not guaranteed). This sync trigger is
                     # required for synchronizing with other devices.
-                    name = 'sync_trigger'
+                    name = 'sync_trigger_out'
+
+            SoundcardHardwareAOChannel:
+                channel = 2
+                name = 'start_trigger_out'
+
+                TimedTrigger:
+                    # This trigger is fired only once at the very beginning of
+                    # the experiment. It should be linked to /Dev1/PFI1 on the
+                    # NI card.
+                    name = 'start_trigger_out'
 
         NIDAQEngine:
             # The sound card WORD clock output should be connected to
@@ -101,26 +141,45 @@ enamldef IOManifest(PluginManifest): manifest:
             hw_ai_monitor_period = 0.125
             weight = 1
 
+            NIDAQHardwareAIChannel:
+                # Settings should match those configured on the IR channels.
+                name = 'sync_trigger_in'
+                channel = 'Dev1/ai3'
+                unit = 'V'
+                expected_range = (0, 5)
+                dtype = 'float64'
+                terminal_coupling = 'DC'
+                terminal_mode = 'RSE'
+                fs = FIREFACE_WORD_CLOCK
+                sample_clock = '/Dev1/PFI0'
+                start_trigger = '/Dev1/PFI1'
+
+                ContinuousInput:
+                    name = 'sync_trigger_in'
+
+                Threshold:
+                    threshold = 2.5
+
+                    Edges:
+                        name = 'sync_trigger_edges'
+
             IRChannel:
                 label = 'Nose poke'
                 name = 'np_contact'
                 channel = 'Dev1/ai0'
-                fs = sound_card.fs
-                sample_clock = '/Dev1/PFI0'
+                fs = FIREFACE_WORD_CLOCK
 
             IRChannel:
                 label = 'Response 1'
                 name = 'resp_contact_1'
                 channel = 'Dev1/ai1'
-                fs = sound_card.fs
-                sample_clock = '/Dev1/PFI0'
+                fs = FIREFACE_WORD_CLOCK
 
             IRChannel:
                 label = 'Response 2'
                 name = 'resp_contact_2'
                 channel = 'Dev1/ai2'
-                fs = sound_card.fs
-                sample_clock = '/Dev1/PFI0'
+                fs = FIREFACE_WORD_CLOCK
 
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line0'
@@ -136,15 +195,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 label = 'Pellet 1'
                 name = 'pellet_1'
 
-                Trigger:
-                    # This is used to trigger a pellet dispense.
-                    name = 'pellet_1'
-
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line2'
                 label = 'Pellet 2'
                 name = 'pellet_2'
-
-                Trigger:
-                    # This is used to trigger a pellet dispense.
-                    name = 'pellet_2'
