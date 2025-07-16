@@ -6,7 +6,7 @@ context:
         expression: 60*60*2
         rove: false
       exposure_bandlimited_fir_noise_burst_rise_time:
-        expression: '60'
+        expression: '1'
         rove: false
       exposure_bandlimited_fir_noise_burst_start_time:
         expression: '0'
@@ -24,7 +24,7 @@ context:
         expression: 1.4e3
         rove: false
       exposure_bandlimited_noise_level:
-        expression: 115+12
+        expression: 100+10
         rove: false
       exposure_bandlimited_noise_max_correction:
         expression: '20'
