@@ -3,17 +3,21 @@ context:
     epoch_group:
     - hw_ao_chirp_level
   parameters:
-    hardware_settings:
+    .ContextRow:
       hw_ao_averages:
-        expression: '32'
+        expression: '64'
         rove: false
-      hw_ao_channel:
-        rove: false
-        selected: Horn
       hw_ao_iti_duration:
-        expression: '0.001'
+        expression: '0.01'
+        rove: false
+    hardware_settings:
+      smoothing_window:
+        expression: '10'
         rove: false
     hw_ao:
+      hw_ao_chirp_audiogram_weighting:
+        rove: false
+        selected: none
       hw_ao_chirp_duration:
         expression: '0.02'
         rove: false
@@ -26,6 +30,9 @@ context:
       hw_ao_chirp_level:
         expression: '-40'
         rove: true
+      hw_ao_chirp_max_correction:
+        expression: '20'
+        rove: false
       hw_ao_chirp_start_frequency:
         expression: '500'
         rove: false
@@ -56,19 +63,20 @@ context:
       order: ascending
       settings:
       - hw_ao_chirp_level: '-12'
-      - hw_ao_chirp_level: '-400'
 epoch_phase_viewbox:
-  y_max: 100.0
-  y_min: -800.0
+  y_max: 356.51947038396463
+  y_min: -1273.7059553090546
 epoch_psd_viewbox:
-  y_max: 0.5
-  y_min: -0.5
+  y_max: -33.02245211241414
+  y_min: -119.12948937079001
 epoch_time_viewbox:
-  y_max: 0.0
-  y_min: 0.0
+  y_max: 0.3679715606352023
+  y_min: -0.3750431693533167
+output.hw_ao:
+  token_name: chirp
 sens_result:
-  y_max: 0.5
-  y_min: -0.5
+  y_max: -2.77116474672113
+  y_min: -10.769839451860944
 spl_result:
-  y_max: 0.5
-  y_min: -0.5
+  y_max: -25.062177260890365
+  y_min: -111.16921451926623
