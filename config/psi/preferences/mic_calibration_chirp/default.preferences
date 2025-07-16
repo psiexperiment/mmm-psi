@@ -1,0 +1,95 @@
+context:
+  meta: {}
+  parameters:
+    .ContextRow:
+      hw_ao_averages:
+        expression: '32'
+        rove: false
+      hw_ao_iti_duration:
+        expression: '0.001'
+        rove: false
+    cal_microphone_settings:
+      cal_microphone:
+        rove: false
+        selected: Measurement Microphone
+      cal_microphone_input_gain:
+        expression: '40'
+        rove: false
+    generic_microphone_settings:
+      generic_microphone:
+        rove: false
+        selected: Monitor
+      generic_microphone_input_gain:
+        expression: '40'
+        rove: false
+    hardware_settings:
+      smoothing_window:
+        expression: '10'
+        rove: false
+      system_speaker:
+        rove: false
+        selected: Overhead
+    hw_ao:
+      hw_ao_chirp_audiogram_weighting:
+        rove: false
+        selected: none
+      hw_ao_chirp_duration:
+        expression: '0.02'
+        rove: false
+      hw_ao_chirp_end_frequency:
+        expression: '50000.0'
+        rove: false
+      hw_ao_chirp_equalize:
+        rove: false
+        selected: 'yes'
+      hw_ao_chirp_level:
+        expression: '-40'
+        rove: false
+      hw_ao_chirp_max_correction:
+        expression: '20'
+        rove: false
+      hw_ao_chirp_start_frequency:
+        expression: '250.0'
+        rove: false
+      hw_ao_chirp_window:
+        rove: false
+        selected: Hann
+    val_level_gain:
+      safe_gain:
+        expression: '0'
+        rove: false
+      validation_level:
+        expression: '80.0'
+        rove: false
+    val_start_end:
+      validation_end:
+        expression: '50000.0'
+        rove: false
+      validation_octaves:
+        expression: '0.125'
+        rove: false
+      validation_start:
+        expression: '500.0'
+        rove: false
+  selectors:
+    default:
+      context_item_order: []
+      order: ascending
+      settings: []
+generic_epoch_view:
+  y_max: 0.01
+  y_min: -0.01
+generic_fft:
+  y_max: -50.0
+  y_min: -160.0
+measurement_epoch_view:
+  y_max: 0.1
+  y_min: -0.1
+measurement_fft:
+  y_max: -50.0
+  y_min: -160.0
+output.hw_ao:
+  token_name: chirp
+sens:
+  y_max: 0.5
+  y_min: -0.5
