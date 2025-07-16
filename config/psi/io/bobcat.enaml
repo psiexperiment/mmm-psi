@@ -6,8 +6,7 @@ os.environ['SD_ENABLE_ASIO'] = '1'
 from enaml.workbench.api import PluginManifest, Extension
 
 from psi.controller.api import (
-    ADC, ContinuousInput, Edges, TimedTrigger, Threshold, Trigger,
-    Toggle
+    ADC, ContinuousInput, Edges, TimedTrigger, Threshold
 )
 from psi.controller.engines.nidaq import (
     NIDAQEngine,
@@ -138,7 +137,7 @@ enamldef IOManifest(PluginManifest): manifest:
             # Dev1/PFI0. When setting the sample clock, we need to provide the
             # sample clock rate as well.
             name = 'NI_misc'
-            hw_ai_monitor_period = 0.125
+            hw_ai_monitor_period = 0.005
             weight = 1
 
             NIDAQHardwareAIChannel:
@@ -181,14 +180,12 @@ enamldef IOManifest(PluginManifest): manifest:
                 channel = 'Dev1/ai2'
                 fs = FIREFACE_WORD_CLOCK
 
+            # For the software-timed channels before, the plugins add the
+            # Toggle/Trigger elements needed.
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line0'
                 label = 'Room Light'
                 name = 'room_light'
-
-                Toggle:
-                    # This is used to control the state of the room light.
-                    name = 'room_light'
 
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line1'
@@ -199,3 +196,8 @@ enamldef IOManifest(PluginManifest): manifest:
                 channel = '/Dev1/port0/line2'
                 label = 'Pellet 2'
                 name = 'pellet_2'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line7'
+                label = 'Cue light'
+                name = 'cue_light'
