@@ -14,26 +14,17 @@ context:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '16.0'
-          - '2.0'
-          - '5.7'
-          - '22.6'
-          - '8.0'
-          - '2.8'
-          - '4.0'
-          - '11.3'
-          - '32.0'
       reward_rate:
-        expression: '0.9'
+        expression: '1'
         rove: false
       reward_silent:
-        expression: 'False'
+        expression: 'True'
         rove: false
       stimuli:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - NBN
           - silence
-          - SAM
     results:
       correct: {}
       response: {}
@@ -77,7 +68,7 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 1995
+    info: 1980
     timestamp: 100
 signal:
   y_max: 0.3172245822682583

@@ -23,10 +23,10 @@ context:
           - '11.3'
           - '32.0'
       reward_rate:
-        expression: '0.9'
+        expression: '0.7'
         rove: false
       reward_silent:
-        expression: 'False'
+        expression: 'True'
         rove: false
       stimuli:
         rove: false

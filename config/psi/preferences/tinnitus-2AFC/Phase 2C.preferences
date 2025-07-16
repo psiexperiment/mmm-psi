@@ -23,10 +23,10 @@ context:
           - '11.3'
           - '32.0'
       reward_rate:
-        expression: '0.9'
+        expression: '1'
         rove: false
       reward_silent:
-        expression: 'False'
+        expression: 'True'
         rove: false
       stimuli:
         rove: false
@@ -77,7 +77,7 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 1995
+    info: 1980
     timestamp: 100
 signal:
   y_max: 0.3172245822682583
