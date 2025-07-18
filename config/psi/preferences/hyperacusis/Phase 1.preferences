@@ -1,0 +1,106 @@
+IR_sensors:
+  y_max: 5.0
+  y_min: 0.0
+context:
+  meta:
+    trial_log:
+    - trial_type
+    - frequency
+    - level
+    - response
+    - score
+    - response_time
+  parameters:
+    Hyperacusis:
+      frequency: {}
+      frequency_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '2.0'
+      go_probability:
+        expression: '0.5'
+        rove: false
+      level: {}
+      level_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '80'
+          - '60'
+          - '40'
+      max_nogo:
+        expression: '5'
+        rove: false
+      remind_trials:
+        expression: '2'
+        rove: false
+      warmup_trials:
+        expression: '4'
+        rove: false
+    results:
+      correct: {}
+      response: {}
+      response_time: {}
+      response_ts: {}
+      score: {}
+      trial_start: {}
+      trial_type: {}
+    trial:
+      continuous_np:
+        expression: 'True'
+        rove: false
+      hold_duration:
+        expression: '0.0'
+        rove: false
+      iti_duration:
+        expression: '1'
+        rove: false
+      keep_lights_on:
+        expression: 'False'
+        rove: false
+      manual_control:
+        expression: 'False'
+        rove: false
+      np_duration:
+        expression: '0.1'
+        rove: false
+      repeat_incorrect:
+        rove: false
+        selected: False alarm (nogo) only
+      response_duration:
+        expression: '5'
+        rove: false
+      target_delay:
+        expression: '0'
+        rove: false
+      to_duration:
+        expression: '1'
+        rove: false
+      training_mode:
+        expression: 'True'
+        rove: false
+  selectors: {}
+event_log:
+  column_widths:
+    event: 100
+    info: 100
+    timestamp: 100
+signal:
+  y_max: 0.1860778192817614
+  y_min: -0.1761944975389095
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+trial_log:
+  column_config:
+    frequency:
+      width: 99
+    level:
+      width: 87
+    response:
+      width: 65
+    response_time:
+      width: 67
+    score:
+      width: 44
+    trial_type:
+      width: 64
