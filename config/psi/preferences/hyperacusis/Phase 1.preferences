@@ -3,8 +3,13 @@ IR_sensors:
   y_min: 0.0
 context:
   meta:
+    sdt_analysis:
+    - trial_type
+    - frequency
+    - level
     trial_log:
     - trial_type
+    - trial_subtype
     - frequency
     - level
     - response
@@ -43,6 +48,7 @@ context:
       response_ts: {}
       score: {}
       trial_start: {}
+      trial_subtype: {}
       trial_type: {}
     trial:
       continuous_np:
@@ -82,25 +88,36 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 100
+    info: 219
     timestamp: 100
-signal:
-  y_max: 0.1860778192817614
-  y_min: -0.1761944975389095
-signal_fft_view_vb:
-  y_max: 100.0
-  y_min: -10.0
-trial_log:
+sdt_analysis:
   column_config:
+    fraction_correct:
+      width: 39
     frequency:
       width: 99
     level:
       width: 87
-    response:
-      width: 65
-    response_time:
-      width: 67
-    score:
-      width: 44
+    n_correct:
+      width: 59
+    n_trials:
+      width: 45
     trial_type:
-      width: 64
+      width: 39
+    z_score:
+      width: 39
+signal:
+  y_max: 0.508484839859368
+  y_min: -0.374682251166166
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+trial_log:
+  column_widths:
+    frequency: 99
+    level: 87
+    response: 40
+    response_time: 67
+    score: 44
+    trial_subtype: 78
+    trial_type: 39

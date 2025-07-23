@@ -35,11 +35,11 @@ context:
         expression: '0'
         rove: false
       validation_level:
-        expression: '60'
+        expression: '80'
         rove: false
     val_start_end:
       validation_end:
-        expression: 32e3
+        expression: 50e3
         rove: false
       validation_octaves:
         expression: '0.125'

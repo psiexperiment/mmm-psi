@@ -3,9 +3,15 @@ IR_sensors:
   y_min: 0.0
 context:
   meta:
-    trial_log:
-    - trial_start
+    nafc_anlaysis:
     - trial_type
+    - nbn_frequency
+    trial_log:
+    - trial_type
+    - trial_subtype
+    - trial_start
+    - nbn_frequency
+    - noise_seed
     - response
     - correct
   parameters:
@@ -14,6 +20,8 @@ context:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '16.0'
+      nbn_frequency: {}
+      noise_seed: {}
       reward_rate:
         expression: '1'
         rove: false
@@ -32,8 +40,12 @@ context:
       response_ts: {}
       score: {}
       trial_start: {}
+      trial_subtype: {}
       trial_type: {}
     trial:
+      continuous_np:
+        expression: 'False'
+        rove: false
       hold_duration:
         expression: '0.0'
         rove: false
@@ -68,8 +80,20 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 1980
+    info: 149
     timestamp: 100
+nafc_anlaysis:
+  column_config:
+    fraction_correct:
+      width: 39
+    n_correct:
+      width: 59
+    n_trials:
+      width: 45
+    nbn_frequency:
+      width: 120
+    trial_type:
+      width: 39
 signal:
   y_max: 0.3172245822682583
   y_min: -0.33898157540482476
@@ -77,12 +101,11 @@ signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
 trial_log:
-  column_config:
-    correct:
-      width: 39
-    response:
-      width: 39
-    trial_start:
-      width: 39
-    trial_type:
-      width: 39
+  column_widths:
+    correct: 39
+    nbn_frequency: 120
+    noise_seed: 70
+    response: 73
+    trial_start: 39
+    trial_subtype: 78
+    trial_type: 39
