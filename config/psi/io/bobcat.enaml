@@ -20,11 +20,30 @@ from psi.controller.engines.soundcard.standard_io import (
 )
 
 
-# Actual frequency of word clock. See https://docs.rme-audio.com/m1620/440-1t_word_single/.
-FIREFACE_WORD_CLOCK = 48000
-
-# Frequency to set Fireface to.
+# Frequency to set Fireface to. For the word clock, verify that it is set to
+# full speed (default) or single-speed. If it's set to single-speed, then it
+# will either be 44.1 or 48 kHz. See
+# https://docs.rme-audio.com/m1620/440-1t_word_single/.
 FIREFACE_FS = 96000
+FIREFACE_WORD_CLOCK_FS = 48000
+
+# The fireface buffering introduces some sample delay. Run `python -m
+# psi.controller.engines.soundcard.measure_delay` to quantify this (requires
+# output channel 1 to be loopbacked to input channel 13).
+
+#| fs (kHz) | buffer size | meas. delay | delay (ms) |
+#|------------------------|-------------|------------|
+#| 192      | 192         | 357         |   1.86     |
+#| 192      | 256         | 421         |   2.12     |
+#| 192      | 512         | 677         |   3.53     |
+#| 192      | 2048        | 2213        |  11.53     |
+#| 192      | 8192        | 8357        |  43.53     |
+
+#|  96      | 1024        | 1108        |  11.54     |
+#|  96      | 2048        | 2132        |  22.21     |
+#|  96      | 4096        | 4180        |  43.54     |
+
+SAMPLE_DELAY = 1108
 
 
 enamldef IRChannel(NIDAQHardwareAIChannel): irc:
@@ -57,10 +76,8 @@ enamldef IOManifest(PluginManifest): manifest:
 
         ASIOFirefaceUSBEngine: sound_card:
             master_clock = True
-            #fs = FIREFACE_FREQUENCY
-
-            # 4193 for AO to AI via hardwired connection, 4180 via internal loopback.
-            latency_samples = 4180
+            fs = FIREFACE_FS
+            latency_samples = SAMPLE_DELAY
 
             # Hardwired loopback is output 5 to input 6. Trigger is output 2 to
             # NI input ACH3.
@@ -149,7 +166,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_coupling = 'DC'
                 terminal_mode = 'RSE'
-                fs = FIREFACE_WORD_CLOCK
+                fs = FIREFACE_WORD_CLOCK_FS
                 sample_clock = '/Dev1/PFI0'
                 start_trigger = '/Dev1/PFI1'
 
@@ -166,19 +183,19 @@ enamldef IOManifest(PluginManifest): manifest:
                 label = 'Nose poke'
                 name = 'np_contact'
                 channel = 'Dev1/ai0'
-                fs = FIREFACE_WORD_CLOCK
+                fs = FIREFACE_WORD_CLOCK_FS
 
             IRChannel:
                 label = 'Response 1'
                 name = 'resp_contact_1'
                 channel = 'Dev1/ai1'
-                fs = FIREFACE_WORD_CLOCK
+                fs = FIREFACE_WORD_CLOCK_FS
 
             IRChannel:
                 label = 'Response 2'
                 name = 'resp_contact_2'
                 channel = 'Dev1/ai2'
-                fs = FIREFACE_WORD_CLOCK
+                fs = FIREFACE_WORD_CLOCK_FS
 
             # For the software-timed channels before, the plugins add the
             # Toggle/Trigger elements needed.
