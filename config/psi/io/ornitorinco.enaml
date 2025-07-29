@@ -218,4 +218,3 @@ enamldef IOManifest(PluginManifest): manifest:
                 Transform:
                     name = 'temperature'
                     function = mv_to_C
-
