@@ -34,7 +34,7 @@
     "pre-histology",
     "pilot"
   ],
-  "current_sequence_name": "",
+  "current_sequence_name": "New",
   "experiment_sequence": [
     {
       "paradigm": "inear_speaker_calibration_chirp",
@@ -154,5 +154,76 @@
       }
     }
   ],
-  "sequences": {}
+  "sequences": {
+    "Pilot": [
+      {
+        "paradigm": "inear_speaker_calibration_chirp",
+        "preference": "Gerbil - conventional.preferences",
+        "plugins": [],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "dpoae_io",
+        "preference": "Gerbil - conventional (500 to 16000 Hz).preferences",
+        "plugins": [
+          "microphone_fft_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "abr_io",
+        "preference": "Gerbil - interleaved ramp.preferences",
+        "plugins": [
+          "eeg_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "dpgram",
+        "preference": "Gerbil - quick DPgram (2000 to 8000).preferences",
+        "plugins": [
+          "microphone_fft_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      }
+    ],
+    "New": [
+      {
+        "paradigm": "inear_speaker_calibration_chirp",
+        "preference": "Gerbil - conventional.preferences",
+        "plugins": [],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "dpoae_io",
+        "preference": "Gerbil - conventional (1000 to 16000 Hz).preferences",
+        "plugins": [
+          "microphone_fft_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "abr_io",
+        "preference": "Gerbil - interleaved ramp.preferences",
+        "plugins": [
+          "eeg_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      }
+    ]
+  }
 }
