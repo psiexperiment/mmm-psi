@@ -19,8 +19,11 @@ context:
       frequencies:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '16.0'
+        - - '2.0'
       nbn_frequency: {}
+      nbn_n:
+        expression: '1'
+        rove: false
       noise_seed: {}
       reward_rate:
         expression: '1'
@@ -28,13 +31,16 @@ context:
       reward_silent:
         expression: 'True'
         rove: false
-      stimuli:
+      sam_n:
+        expression: '1'
         rove: false
-        selected: !!python/object/apply:builtins.list
-        - - NBN
-          - silence
+      silence_n:
+        expression: '1'
+        rove: false
     results:
       correct: {}
+      psivideo_frame_ts: {}
+      psivideo_frames_written: {}
       response: {}
       response_time: {}
       response_ts: {}
@@ -63,12 +69,12 @@ context:
         rove: false
       repeat_incorrect:
         rove: false
-        selected: All trials
+        selected: 'No'
       response_duration:
         expression: '5'
         rove: false
       target_delay:
-        expression: '0'
+        expression: '0.1'
         rove: false
       to_duration:
         expression: '5'
@@ -80,7 +86,7 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 149
+    info: 358
     timestamp: 100
 nafc_anlaysis:
   column_config:
@@ -105,7 +111,7 @@ trial_log:
     correct: 39
     nbn_frequency: 120
     noise_seed: 70
-    response: 73
+    response: 39
     trial_start: 39
     trial_subtype: 78
     trial_type: 39
