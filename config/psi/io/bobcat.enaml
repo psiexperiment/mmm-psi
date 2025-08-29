@@ -25,7 +25,8 @@ from psi.controller.engines.soundcard.standard_io import (
 # will either be 44.1 or 48 kHz. See
 # https://docs.rme-audio.com/m1620/440-1t_word_single/.
 FIREFACE_FS = 96000
-FIREFACE_WORD_CLOCK_FS = 48000
+
+NI_FS = 80e9 / 80e6
 
 # The fireface buffering introduces some sample delay. Run `python -m
 # psi.controller.engines.soundcard.measure_delay` to quantify this (requires
@@ -43,7 +44,7 @@ FIREFACE_WORD_CLOCK_FS = 48000
 #|  96      | 2048        | 2132        |  22.21     |
 #|  96      | 4096        | 4180        |  43.54     |
 
-SAMPLE_DELAY = 1108
+SAMPLE_DELAY = 4180
 
 
 enamldef IRChannel(NIDAQHardwareAIChannel): irc:
@@ -56,7 +57,7 @@ enamldef IRChannel(NIDAQHardwareAIChannel): irc:
     terminal_coupling = 'DC'
     terminal_mode = 'RSE'
     start_trigger = '/Dev1/PFI1'
-    sample_clock = '/Dev1/PFI0'
+    #sample_clock = '/Dev1/PFI0'
 
     ADC: adc:
         name << parent.name
@@ -81,7 +82,6 @@ enamldef IOManifest(PluginManifest): manifest:
 
             # Hardwired loopback is output 5 to input 6. Trigger is output 2 to
             # NI input ACH3.
-
             SoundcardHardwareAIChannel:
                 channel = 0
                 label = 'Microphone 1'
@@ -166,8 +166,8 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_coupling = 'DC'
                 terminal_mode = 'RSE'
-                fs = FIREFACE_WORD_CLOCK_FS
-                sample_clock = '/Dev1/PFI0'
+                fs = NI_FS
+                #sample_clock = '/Dev1/PFI0'
                 start_trigger = '/Dev1/PFI1'
 
                 ContinuousInput:
@@ -183,19 +183,19 @@ enamldef IOManifest(PluginManifest): manifest:
                 label = 'Nose poke'
                 name = 'np_contact'
                 channel = 'Dev1/ai0'
-                fs = FIREFACE_WORD_CLOCK_FS
+                fs = NI_FS
 
             IRChannel:
                 label = 'Response 1'
                 name = 'resp_contact_1'
                 channel = 'Dev1/ai1'
-                fs = FIREFACE_WORD_CLOCK_FS
+                fs = NI_FS
 
             IRChannel:
                 label = 'Response 2'
                 name = 'resp_contact_2'
                 channel = 'Dev1/ai2'
-                fs = FIREFACE_WORD_CLOCK_FS
+                fs = NI_FS
 
             # For the software-timed channels before, the plugins add the
             # Toggle/Trigger elements needed.
