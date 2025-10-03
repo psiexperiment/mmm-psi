@@ -1,0 +1,237 @@
+# Ensure ASIO backend is enabled. This is important!
+import os
+os.environ['SD_ENABLE_ASIO'] = '1'
+
+
+from enaml.workbench.api import PluginManifest, Extension
+
+from psi.controller.api import (
+    ADC, ContinuousInput, Edges, TimedTrigger, Threshold, Transform,
+)
+from psi.controller.engines.nidaq import (
+    NIDAQEngine,
+    NIDAQHardwareAIChannel,
+    NIDAQSoftwareDOChannel
+)
+from psi.controller.engines.soundcard.standard_io import (
+    ASIOFirefaceUSBEngine,
+    SoundcardHardwareAIChannel,
+    SoundcardHardwareAOChannel,
+)
+
+
+# Using Fireface USB Settings, ensure that "Buffer Size" is set to 4096
+# samples. Under Output Format, ensure Word Single Speed is checked. Under
+# Clock Mode, ensure that sample rate is set to 96000 Hz.
+
+# Frequency to set Fireface to. For the word clock, verify that it is set to
+# full speed (default) or single-speed. If it's set to single-speed, then it
+# will either be 44.1 or 48 kHz. See
+# https://docs.rme-audio.com/m1620/440-1t_word_single/.
+FIREFACE_FS = 96000
+FIREFACE_WORD_CLOCK_FS = 48000
+
+# The fireface buffering introduces some sample delay. Run `python -m
+# psi.controller.engines.soundcard.measure_delay` to quantify this (requires
+# output channel 1 to be loopbacked to input channel 13).
+
+#| fs (kHz) | buffer size | meas. delay | delay (ms) |
+#|------------------------|-------------|------------|
+#| 192      | 192         | 357         |   1.86     |
+#| 192      | 256         | 421         |   2.12     |
+#| 192      | 512         | 677         |   3.53     |
+#| 192      | 2048        | 2213        |  11.53     |
+#| 192      | 8192        | 8357        |  43.53     |
+
+#|  96      | 1024        | 1108        |  11.54     |
+#|  96      | 2048        | 2132        |  22.21     |
+#|  96      | 4096        | 4180        |  43.54     |
+
+SAMPLE_DELAY = 1108
+
+
+enamldef IRChannel(NIDAQHardwareAIChannel): irc:
+    '''
+    Set up a channel designed to recieve input from our IR sensors.
+    '''
+    unit = 'V'
+    expected_range = (0, 5)
+    dtype = 'float64'
+    terminal_coupling = 'DC'
+    terminal_mode = 'RSE'
+    start_trigger = '/Dev1/PFI1'
+    sample_clock = '/Dev1/PFI0'
+
+    attr rescale_offset = 0
+    attr rescale_gain = 1
+
+    Transform:
+        function = lambda x: (x - irc.rescale_offset) * irc.rescale_gain
+        name = irc.name + '_rescaled'
+
+        ADC: adc:
+            name << irc.name
+            threshold = 1.75
+            target_fs = 100
+
+
+enamldef IOManifest(PluginManifest): manifest:
+    # Since most soundcards do not support DC-coupled analog inputs or outputs,
+    # anything that is expected to have a DC component in it (e.g., IR sensors)
+    # is offloaded to a NI card. The devices are synchronized using the WORD
+    # clock output fo the sound card.
+
+    Extension:
+        id = 'bobcat_backend'
+        point = 'psi.controller.io'
+
+        ASIOFirefaceUSBEngine: sound_card:
+            master_clock = True
+            fs = FIREFACE_FS
+            latency_samples = SAMPLE_DELAY
+
+            # Hardwired loopback is output 5 to input 6. Trigger is output 2 to
+            # NI input ACH3.
+
+            SoundcardHardwareAIChannel:
+                channel = 0
+                label = 'Microphone 1'
+                name = 'microphone_1'
+                dBFS = (13, 'dBu')
+                supported_devices = ['generic_microphone']
+
+            SoundcardHardwareAIChannel:
+                channel = 1
+                label = 'Measurement Microphone'
+                name = 'measurement_microphone'
+                dBFS = (13, 'dBu')
+                supported_devices = ['measurement_microphone']
+
+            SoundcardHardwareAIChannel:
+                # This is a loopback that allows us to monitor the exact signal
+                # sent to the channel.
+                channel = 12
+                label = 'Speaker 1 Loopback'
+                name = 'loopback_1'
+                dBFS = (13, 'dBu')
+
+            SoundcardHardwareAIChannel:
+                # This is a loopback that allows us to monitor the exact signal
+                # sent to the channel.
+                channel = 13
+                label = 'TTL Loopback'
+                name = 'loopback_ttl'
+                dBFS = (13, 'dBu')
+
+                ContinuousInput:
+                    name = 'loopback_ttl'
+
+                Threshold:
+                    threshold = 2.5
+
+                    Edges:
+                        name = 'loopback_ttl_edges'
+
+            SoundcardHardwareAOChannel:
+                channel = 0
+                label = 'Speaker 1'
+                name = 'speaker_1'
+                supported_devices = ['speaker']
+
+            SoundcardHardwareAOChannel:
+                channel = 1
+                name = 'sync_trigger_out'
+
+                TimedTrigger:
+                    # This is a hardware-timed trigger that allows us to
+                    # schedule a trigger to occur at a very precise sample (as
+                    # opposed to Trigger, which is software-timed and accuracy
+                    # of timing is not guaranteed). This sync trigger is
+                    # required for synchronizing with other devices.
+                    name = 'sync_trigger_out'
+
+            SoundcardHardwareAOChannel:
+                channel = 2
+                name = 'start_trigger_out'
+
+                TimedTrigger:
+                    # This trigger is fired only once at the very beginning of
+                    # the experiment. It should be linked to /Dev1/PFI1 on the
+                    # NI card.
+                    name = 'start_trigger_out'
+
+        NIDAQEngine:
+            # The sound card WORD clock output should be connected to
+            # Dev1/PFI0. When setting the sample clock, we need to provide the
+            # sample clock rate as well.
+            name = 'NI_misc'
+            hw_ai_monitor_period = 0.005
+            weight = 1
+
+            NIDAQHardwareAIChannel:
+                # Settings should match those configured on the IR channels.
+                name = 'sync_trigger_in'
+                channel = 'Dev1/ai3'
+                unit = 'V'
+                expected_range = (0, 5)
+                dtype = 'float64'
+                terminal_coupling = 'DC'
+                terminal_mode = 'RSE'
+                fs = FIREFACE_WORD_CLOCK_FS
+                sample_clock = '/Dev1/PFI0'
+                start_trigger = '/Dev1/PFI1'
+
+                ContinuousInput:
+                    name = 'sync_trigger_in'
+
+                Threshold:
+                    threshold = 2.5
+
+                    Edges:
+                        name = 'sync_trigger_edges'
+
+            IRChannel:
+                label = 'Nose poke'
+                name = 'np_contact'
+                channel = 'Dev1/ai0'
+                fs = FIREFACE_WORD_CLOCK_FS
+
+            IRChannel:
+                # Blue
+                label = 'Response 1'
+                name = 'resp_contact_1'
+                channel = 'Dev1/ai1'
+                fs = FIREFACE_WORD_CLOCK_FS
+                rescale_offset = 1.15
+                #rescale_gain = 2
+
+            IRChannel:
+                # Red
+                label = 'Response 2'
+                name = 'resp_contact_2'
+                channel = 'Dev1/ai2'
+                fs = FIREFACE_WORD_CLOCK_FS
+                rescale_offset = 1.9
+                #rescale_gain = 4
+
+            # For the software-timed channels before, the plugins add the
+            # Toggle/Trigger elements needed.
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line0'
+                label = 'Room Light'
+                name = 'room_light'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line1'
+                label = 'Pellet 1'
+                name = 'pellet_1'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line2'
+                label = 'Pellet 2'
+                name = 'pellet_2'
+
+            NIDAQSoftwareDOChannel:
+                channel = '/Dev1/port0/line7'
+                label = 'Cue light'
+                name = 'cue_light'
