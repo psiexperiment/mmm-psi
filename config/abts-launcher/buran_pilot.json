@@ -17,6 +17,12 @@
   ],
   "experiments": [
     {
+      "paradigm": "modulation-2AFC",
+      "preference": "",
+      "plugins": [],
+      "mode_notes": {}
+    },
+    {
       "paradigm": "tinnitus-2AFC",
       "preference": "Phase 1.preferences",
       "plugins": [
@@ -26,14 +32,6 @@
     },
     {
       "paradigm": "hyperacusis",
-      "preference": "",
-      "plugins": [
-        "psivideo"
-      ],
-      "mode_notes": {}
-    },
-    {
-      "paradigm": "signal-in-noise",
       "preference": "",
       "plugins": [
         "psivideo"
