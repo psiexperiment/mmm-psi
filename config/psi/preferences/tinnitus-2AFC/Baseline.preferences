@@ -31,10 +31,10 @@ context:
         rove: false
       noise_seed: {}
       reward_punish_silent:
-        expression: 'False'
+        expression: 'True'
         rove: false
       reward_rate:
-        expression: '0.9'
+        expression: '0.7'
         rove: false
       sam_n:
         expression: '3'
@@ -42,6 +42,7 @@ context:
       silence_n:
         expression: '2'
         rove: false
+      trial_rewarded: {}
     results:
       correct: {}
       np_actual_duration: {}
@@ -93,7 +94,7 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 149
+    info: 150
     timestamp: 100
 nafc_anlaysis:
   column_config:
@@ -116,6 +117,6 @@ signal_fft_view_vb:
 trial_log:
   column_widths:
     correct: 39
-    response: 40
+    response: 39
     trial_start: 39
     trial_type: 39

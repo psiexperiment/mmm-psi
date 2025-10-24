@@ -1,7 +1,9 @@
 {
   "logging_level": "info",
   "standard_notes": [
-    "training"
+    "training",
+    "testing",
+    "baseline"
   ],
   "speaker_config": [
     {
@@ -19,12 +21,14 @@
     {
       "paradigm": "modulation-2AFC",
       "preference": "",
-      "plugins": [],
+      "plugins": [
+        "psivideo"
+      ],
       "mode_notes": {}
     },
     {
       "paradigm": "tinnitus-2AFC",
-      "preference": "Phase 1.preferences",
+      "preference": "Baseline.preferences",
       "plugins": [
         "psivideo"
       ],

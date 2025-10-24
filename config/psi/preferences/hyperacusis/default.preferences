@@ -3,51 +3,46 @@ IR_sensors:
   y_min: 0.0
 context:
   meta:
-    nafc_anlaysis:
+    sdt_analysis:
     - trial_type
-    - nbn_frequency
+    - frequency
+    - level
     trial_log:
-    - trial_start
     - trial_type
+    - trial_subtype
+    - frequency
+    - level
     - response
-    - correct
+    - score
+    - response_time
   parameters:
-    Tinnitus 2AFC:
-      frequencies:
+    Hyperacusis:
+      frequency: {}
+      frequency_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '16.0'
-          - '2.0'
-          - '5.7'
-          - '22.6'
-          - '8.0'
-          - '2.8'
-          - '4.0'
-          - '11.3'
-          - '32.0'
-      nbn_frequency: {}
-      nbn_n:
+        - - '2.0'
+      go_probability:
+        expression: '0.5'
+        rove: false
+      level: {}
+      level_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '80'
+          - '60'
+          - '40'
+      max_nogo:
         expression: '5'
         rove: false
-      noise_seed: {}
-      reward_punish_silent:
-        expression: 'False'
-        rove: false
-      reward_rate:
-        expression: '0.9'
-        rove: false
-      sam_n:
-        expression: '3'
-        rove: false
-      silence_n:
+      remind_trials:
         expression: '2'
+        rove: false
+      warmup_trials:
+        expression: '4'
         rove: false
     results:
       correct: {}
-      np_actual_duration: {}
-      psivideo_frame_ts: {}
-      psivideo_frames_written: {}
-      reaction_time: {}
       response: {}
       response_time: {}
       response_ts: {}
@@ -57,7 +52,7 @@ context:
       trial_type: {}
     trial:
       continuous_np:
-        expression: 'False'
+        expression: 'True'
         rove: false
       hold_duration:
         expression: '0.0'
@@ -72,50 +67,57 @@ context:
         expression: 'False'
         rove: false
       np_duration:
-        expression: '0.5'
+        expression: '0.1'
         rove: false
       repeat_incorrect:
         rove: false
-        selected: 'No'
+        selected: False alarm (nogo) only
       response_duration:
-        expression: '8'
+        expression: '5'
         rove: false
       target_delay:
-        expression: '0.1'
+        expression: '0'
         rove: false
       to_duration:
-        expression: '4'
+        expression: '1'
         rove: false
       training_mode:
-        expression: 'False'
+        expression: 'True'
         rove: false
   selectors: {}
 event_log:
   column_widths:
     event: 100
-    info: 149
+    info: 219
     timestamp: 100
-nafc_anlaysis:
+sdt_analysis:
   column_config:
     fraction_correct:
       width: 39
+    frequency:
+      width: 99
+    level:
+      width: 87
     n_correct:
       width: 59
     n_trials:
       width: 45
-    nbn_frequency:
-      width: 120
     trial_type:
       width: 39
+    z_score:
+      width: 39
 signal:
-  y_max: 0.7168948222831959
-  y_min: -0.8828401187447673
+  y_max: 0.508484839859368
+  y_min: -0.374682251166166
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
 trial_log:
   column_widths:
-    correct: 39
+    frequency: 99
+    level: 87
     response: 40
-    trial_start: 39
+    response_time: 67
+    score: 44
+    trial_subtype: 78
     trial_type: 39
