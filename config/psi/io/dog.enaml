@@ -212,8 +212,8 @@ enamldef IOManifest(PluginManifest): manifest:
                 name = 'resp_contact_2'
                 channel = 'Dev1/ai2'
                 fs = FIREFACE_WORD_CLOCK_FS
-                rescale_offset = 1.9
-                rescale_gain = 5 / 0.5
+                rescale_offset = 1.83
+                rescale_gain = 5 / 0.06
 
             # For the software-timed channels before, the plugins add the
             # Toggle/Trigger elements needed.
