@@ -5,9 +5,9 @@ context:
   meta:
     nafc_anlaysis:
     - trial_type
-    - fc
     - stm_depth
     trial_log:
+    - trial_start
     - actual_level
     - fc
     - stm_depth
@@ -23,7 +23,7 @@ context:
         expression: '60'
         rove: false
       cpo:
-        expression: '0'
+        expression: '2'
         rove: false
       cps:
         expression: '4'
@@ -33,10 +33,8 @@ context:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '4'
-          - '1'
-          - '16'
       level_range:
-        expression: '10'
+        expression: '5'
         rove: false
       rise_time:
         expression: '0.25'
@@ -46,9 +44,18 @@ context:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '24'
+          - '21'
+          - '18'
+          - '15'
+          - '12'
+      target_probability:
+        expression: '0.5'
+        rove: false
     results:
       correct: {}
       np_actual_duration: {}
+      psivideo_frame_ts: {}
+      psivideo_frames_written: {}
       reaction_time: {}
       response: {}
       response_time: {}
@@ -62,7 +69,7 @@ context:
         expression: 'False'
         rove: false
       hold_duration:
-        expression: '0.0'
+        expression: '0.25'
         rove: false
       iti_duration:
         expression: '1'
@@ -80,16 +87,16 @@ context:
         rove: false
         selected: All trials
       response_duration:
-        expression: '8'
+        expression: '6'
         rove: false
       target_delay:
         expression: '0.5'
         rove: false
       to_duration:
-        expression: '2'
+        expression: '4'
         rove: false
       training_mode:
-        expression: 'True'
+        expression: 'False'
         rove: false
   selectors: {}
 event_log:
@@ -102,8 +109,6 @@ loopback_1_fft_view_vb:
   y_min: -161.8718631234962
 nafc_anlaysis:
   column_config:
-    fc:
-      width: 53
     fraction_correct:
       width: 39
     n_correct:
@@ -113,10 +118,10 @@ nafc_anlaysis:
     stm_depth:
       width: 69
     trial_type:
-      width: 56
+      width: 39
 signal:
-  y_max: 1.4836992304615195
-  y_min: -1.4139991864643773
+  y_max: 0.606385823252413
+  y_min: -0.5822408020086778
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
@@ -125,5 +130,6 @@ trial_log:
     actual_level: 87
     correct: 39
     fc: 53
-    response: 73
+    response: 39
     stm_depth: 69
+    trial_start: 39
