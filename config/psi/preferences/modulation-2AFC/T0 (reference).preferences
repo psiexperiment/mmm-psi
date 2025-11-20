@@ -1,0 +1,130 @@
+IR_sensors:
+  y_max: 5.0
+  y_min: 0.0
+context:
+  meta:
+    nafc_anlaysis:
+    - trial_type
+    - fc
+    - stm_depth
+    trial_log:
+    - actual_level
+    - fc
+    - stm_depth
+    - response
+    - correct
+  parameters:
+    Stimuli:
+      actual_level: {}
+      bw:
+        expression: '2'
+        rove: false
+      center_level:
+        expression: '60'
+        rove: false
+      cpo:
+        expression: '0'
+        rove: false
+      cps:
+        expression: '4'
+        rove: false
+      fc: {}
+      fc_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '4'
+      level_range:
+        expression: '5'
+        rove: false
+      rise_time:
+        expression: '0.25'
+        rove: false
+      stm_depth: {}
+      stm_depth_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '24'
+      target_probability:
+        expression: '0'
+        rove: false
+    results:
+      correct: {}
+      np_actual_duration: {}
+      reaction_time: {}
+      response: {}
+      response_time: {}
+      response_ts: {}
+      score: {}
+      trial_start: {}
+      trial_subtype: {}
+      trial_type: {}
+    trial:
+      continuous_np:
+        expression: 'False'
+        rove: false
+      hold_duration:
+        expression: '0.0'
+        rove: false
+      iti_duration:
+        expression: '1'
+        rove: false
+      keep_lights_on:
+        expression: 'False'
+        rove: false
+      manual_control:
+        expression: 'True'
+        rove: false
+      np_duration:
+        expression: '0.1'
+        rove: false
+      repeat_incorrect:
+        rove: false
+        selected: All trials
+      response_duration:
+        expression: '8'
+        rove: false
+      target_delay:
+        expression: '0.5'
+        rove: false
+      to_duration:
+        expression: '2'
+        rove: false
+      training_mode:
+        expression: 'True'
+        rove: false
+  selectors: {}
+event_log:
+  column_widths:
+    event: 100
+    info: 2448
+    timestamp: 100
+loopback_1_fft_view_vb:
+  y_max: 106.29209945965174
+  y_min: -161.8718631234962
+nafc_anlaysis:
+  column_config:
+    fc:
+      width: 53
+    fraction_correct:
+      width: 39
+    n_correct:
+      width: 59
+    n_trials:
+      width: 45
+    stm_depth:
+      width: 69
+    trial_type:
+      width: 39
+signal:
+  y_max: 1.4836992304615195
+  y_min: -1.4139991864643773
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+trial_log:
+  column_widths:
+    actual_level: 87
+    correct: 39
+    fc: 53
+    response: 39
+    stm_depth: 69
