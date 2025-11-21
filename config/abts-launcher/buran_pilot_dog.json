@@ -1,0 +1,42 @@
+{
+  "logging_level": "info",
+  "standard_notes": [
+    "training"
+  ],
+  "speaker_config": [
+    {
+      "output_name": "speaker_1",
+      "name": "Dayton-RST28F-4"
+    }
+  ],
+  "mic_config": [
+    {
+      "input_name": "microphone_1",
+      "name": "Behringer-ECM-Pro"
+    }
+  ],
+  "experiments": [
+    {
+      "paradigm": "modulation-2AFC",
+      "preference": "training.preferences",
+      "plugins": [],
+      "mode_notes": {}
+    },
+    {
+      "paradigm": "tinnitus-2AFC",
+      "preference": "Phase 1.preferences",
+      "plugins": [
+        "psivideo"
+      ],
+      "mode_notes": {}
+    },
+    {
+      "paradigm": "hyperacusis",
+      "preference": "",
+      "plugins": [
+        "psivideo"
+      ],
+      "mode_notes": {}
+    }
+  ]
+}
