@@ -23,7 +23,7 @@ context:
         expression: '60'
         rove: false
       cpo:
-        expression: '0.5'
+        expression: '2'
         rove: false
       cps:
         expression: '4'
@@ -43,7 +43,7 @@ context:
       stm_depth_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '24'
+        - - '-24'
       target_probability:
         expression: '0.5'
         rove: false
@@ -98,7 +98,7 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 100
+    info: 2470
     timestamp: 100
 loopback_1_fft_view_vb:
   y_max: 106.29209945965174

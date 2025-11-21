@@ -24,7 +24,7 @@ context:
         expression: '60'
         rove: false
       cpo:
-        expression: '0'
+        expression: '2'
         rove: false
       cps:
         expression: '4'
@@ -34,12 +34,8 @@ context:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '4'
-          - '1'
-          - '16'
-          - '2'
-          - '8'
       level_range:
-        expression: '10'
+        expression: '5'
         rove: false
       rise_time:
         expression: '0.25'
@@ -48,11 +44,10 @@ context:
       stm_depth_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '24'
-          - '21'
-          - '18'
-          - '15'
-          - '12'
+        - - '-24'
+      target_probability:
+        expression: '0.5'
+        rove: false
     results:
       correct: {}
       np_actual_duration: {}
@@ -83,7 +78,7 @@ context:
         expression: 'False'
         rove: false
       np_duration:
-        expression: '0.25'
+        expression: '0.0'
         rove: false
       repeat_incorrect:
         rove: false
@@ -92,7 +87,7 @@ context:
         expression: '8'
         rove: false
       target_delay:
-        expression: '0.5'
+        expression: '0.25'
         rove: false
       to_duration:
         expression: '2'
@@ -104,11 +99,11 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 104
+    info: 2470
     timestamp: 100
 loopback_1_fft_view_vb:
-  y_max: 106.29209945965174
-  y_min: -161.8718631234962
+  y_max: 100.0
+  y_min: -10.0
 nafc_anlaysis:
   column_config:
     fc:
@@ -122,10 +117,10 @@ nafc_anlaysis:
     stm_depth:
       width: 69
     trial_type:
-      width: 56
+      width: 39
 signal:
-  y_max: 1.4836992304615195
-  y_min: -1.4139991864643773
+  y_max: 0.1
+  y_min: -0.1
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
@@ -134,6 +129,6 @@ trial_log:
     actual_level: 87
     correct: 39
     fc: 53
-    response: 73
+    response: 39
     stm_depth: 69
-    trial_start: 46
+    trial_start: 39

@@ -20,7 +20,7 @@
   "experiments": [
     {
       "paradigm": "modulation-2AFC",
-      "preference": "",
+      "preference": "Testing (4 Hz 2 co STM).preferences",
       "plugins": [
         "psivideo"
       ],

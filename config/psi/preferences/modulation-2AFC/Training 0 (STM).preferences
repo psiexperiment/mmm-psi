@@ -44,7 +44,7 @@ context:
       stm_depth_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '24'
+        - - '-24'
       target_probability:
         expression: '1'
         rove: false
