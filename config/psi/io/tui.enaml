@@ -204,22 +204,24 @@ enamldef IOManifest(PluginManifest): manifest:
                 rescale_gain = 5 / 2.4
 
             IRChannel:
-                # Blue
-                label = 'Response 1'
-                name = 'resp_contact_1'
+                # Red
+                label = 'Response 2'
+                name = 'resp_contact_2'
                 channel = 'Dev1/ai1'
                 fs = NI_FS
                 rescale_offset = 1.15
                 rescale_gain = 5 / 1
 
             IRChannel:
-                # Red
-                label = 'Response 2'
-                name = 'resp_contact_2'
+                # Blue
+                label = 'Response 1'
+                name = 'resp_contact_1'
                 channel = 'Dev1/ai2'
                 fs = NI_FS
-                rescale_offset = 1.65
-                rescale_gain = 5 / 0.25
+                rescale_offset = 1.5
+                rescale_gain = 5 / 1
+                #rescale_offset = 1.15
+                #rescale_gain = 5 / 1
 
             # For the software-timed channels before, the plugins add the
             # Toggle/Trigger elements needed.
@@ -230,13 +232,13 @@ enamldef IOManifest(PluginManifest): manifest:
 
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line1'
-                label = 'Pellet 1'
-                name = 'pellet_1'
+                label = 'Pellet 2'
+                name = 'pellet_2'
 
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line2'
-                label = 'Pellet 2'
-                name = 'pellet_2'
+                label = 'Pellet 1'
+                name = 'pellet_1'
 
             NIDAQSoftwareDOChannel:
                 channel = '/Dev1/port0/line7'

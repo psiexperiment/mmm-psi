@@ -17,22 +17,8 @@
   ],
   "experiments": [
     {
-      "paradigm": "modulation-2AFC",
-      "preference": "training.preferences",
-      "plugins": [],
-      "mode_notes": {}
-    },
-    {
-      "paradigm": "tinnitus-2AFC",
-      "preference": "Phase 1.preferences",
-      "plugins": [
-        "psivideo"
-      ],
-      "mode_notes": {}
-    },
-    {
-      "paradigm": "hyperacusis",
-      "preference": "",
+      "paradigm": "modulation-gonogo",
+      "preference": "Training (nogo).preferences",
       "plugins": [
         "psivideo"
       ],

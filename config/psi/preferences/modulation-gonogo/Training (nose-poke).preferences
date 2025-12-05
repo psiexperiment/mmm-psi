@@ -1,0 +1,140 @@
+IR_sensors:
+  y_max: 5.0
+  y_min: 0.0
+context:
+  meta:
+    sdt_analysis:
+    - trial_type
+    trial_log:
+    - trial_start
+    - trial_type
+    - stm_depth
+    - trial_subtype
+    - response
+    - correct
+  parameters:
+    Stimuli:
+      actual_level: {}
+      bw:
+        expression: '1'
+        rove: false
+      center_level:
+        expression: '60'
+        rove: false
+      cpo:
+        expression: '2'
+        rove: false
+      cps:
+        expression: '4'
+        rove: false
+      fc: {}
+      fc_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '4'
+      level_range:
+        expression: '10'
+        rove: false
+      masker_gain:
+        expression: '0'
+        rove: false
+      max_reward_depth:
+        expression: '-9'
+        rove: false
+      rise_time:
+        expression: '0.25'
+        rove: false
+      stm_depth: {}
+      stm_depth_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '-60'
+    results:
+      correct: {}
+      np_actual_duration: {}
+      psivideo_frame_ts: {}
+      psivideo_frames_written: {}
+      reaction_time: {}
+      response: {}
+      response_time: {}
+      response_ts: {}
+      score: {}
+      trial_start: {}
+      trial_subtype: {}
+      trial_type: {}
+    trial:
+      continuous_np:
+        expression: 'True'
+        rove: false
+      hold_duration:
+        expression: '0'
+        rove: false
+      iti_duration:
+        expression: '1'
+        rove: false
+      keep_lights_on:
+        expression: 'False'
+        rove: false
+      manual_control:
+        expression: 'False'
+        rove: false
+      np_duration:
+        expression: '0'
+        rove: false
+      repeat_incorrect:
+        rove: false
+        selected: False alarm (nogo) only
+      response_duration:
+        expression: '6'
+        rove: false
+      target_delay:
+        expression: '0.25'
+        rove: false
+      to_duration:
+        expression: '1'
+        rove: false
+      training_mode:
+        expression: 'False'
+        rove: false
+    trial_sequence:
+      max_reference:
+        expression: '5'
+        rove: false
+      remind_trials:
+        expression: '5'
+        rove: false
+      target_probability:
+        expression: '1'
+        rove: false
+      warmup_trials:
+        expression: '5'
+        rove: false
+  selectors: {}
+event_log:
+  column_widths:
+    event: 100
+    info: 2533
+    timestamp: 100
+sdt_analysis:
+  column_config:
+    fraction_correct:
+      width: 39
+    n_correct:
+      width: 59
+    n_trials:
+      width: 45
+    trial_type:
+      width: 39
+    z_score:
+      width: 39
+signal:
+  y_max: 0.1
+  y_min: -0.1
+trial_log:
+  column_widths:
+    correct: 39
+    response: 39
+    stm_depth: 69
+    trial_start: 39
+    trial_subtype: 78
+    trial_type: 39
