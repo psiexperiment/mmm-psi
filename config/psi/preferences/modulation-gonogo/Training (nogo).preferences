@@ -37,7 +37,7 @@ context:
         expression: '5'
         rove: false
       masker_gain:
-        expression: '0'
+        expression: '-0'
         rove: false
       max_reward_depth:
         expression: '-9'
@@ -49,7 +49,7 @@ context:
       stm_depth_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '-60'
+        - - '-48'
     results:
       correct: {}
       np_actual_duration: {}
@@ -86,13 +86,13 @@ context:
         rove: false
         selected: False alarm (nogo) only
       response_duration:
-        expression: '8'
+        expression: '6'
         rove: false
       target_delay:
         expression: '0.25'
         rove: false
       to_duration:
-        expression: '6'
+        expression: '4'
         rove: false
       training_mode:
         expression: 'False'
@@ -105,7 +105,7 @@ context:
         expression: '10'
         rove: false
       target_probability:
-        expression: '0.5'
+        expression: '0.75'
         rove: false
       warmup_trials:
         expression: '0'
@@ -114,7 +114,7 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 2548
+    info: 307
     timestamp: 100
 sdt_analysis:
   column_config:
