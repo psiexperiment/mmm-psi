@@ -20,7 +20,9 @@
       "paradigm": "modulation-gonogo",
       "preference": "Training (nogo).preferences",
       "plugins": [
-        "psivideo"
+        "psivideo",
+        "signal_fft_view",
+        "loopback_1_fft_view"
       ],
       "mode_notes": {}
     }
