@@ -21,8 +21,9 @@ from psi.controller.engines.soundcard.standard_io import (
 # Clock Mode, ensure that sample rate is set to 96000 Hz.
 
 # Frequency to set Fireface to. 
+#FIREFACE_FS = 176400
 FIREFACE_FS = 192000
-SAMPLE_DELAY = 2213
+SAMPLE_DELAY = 8357
 
 # The fireface buffering introduces some sample delay. Run `python -m
 # psi.controller.engines.soundcard.measure_delay` to quantify this (requires
