@@ -6,7 +6,7 @@ os.environ['SD_ENABLE_ASIO'] = '1'
 from enaml.workbench.api import PluginManifest, Extension
 
 from psi.controller.api import (
-    ADC, ContinuousInput, Edges, TimedTrigger, Threshold
+    ADC, ContinuousInput, Edges, ExperimentAction, TimedTrigger, Threshold
 )
 from psi.controller.engines.nidaq import (
     NIDAQEngine,
@@ -70,6 +70,17 @@ enamldef IOManifest(PluginManifest): manifest:
     # anything that is expected to have a DC component in it (e.g., IR sensors)
     # is offloaded to a NI card. The devices are synchronized using the WORD
     # clock output fo the sound card.
+
+    Extension:
+        id = 'bobcat_actions'
+        point = 'psi.controller.actions'
+
+        ExperimentAction:
+            # This fires a trigger that starts connected devices (e.g., NI
+            # cards).
+            event = 'engines_configured'
+            command = 'start_trigger_out.trigger'
+            kwargs = {'duration': 0.1}
 
     Extension:
         id = 'bobcat_backend'
