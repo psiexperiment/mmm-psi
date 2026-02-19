@@ -1,6 +1,3 @@
-IR_sensors:
-  y_max: 5.0
-  y_min: 0.0
 context:
   meta:
     sdt_analysis:
@@ -16,12 +13,14 @@ context:
     - score
     - response_time
   parameters:
-    Hyperacusis:
+    Tone Detection:
       frequency: {}
       frequency_list:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '2.0'
+          - '4.0'
+          - '32.0'
       go_probability:
         expression: '0.5'
         rove: false
@@ -43,6 +42,10 @@ context:
         rove: false
     results:
       correct: {}
+      np_actual_duration: {}
+      psivideo_frame_ts: {}
+      psivideo_frames_written: {}
+      reaction_time: {}
       response: {}
       response_time: {}
       response_ts: {}
@@ -85,17 +88,15 @@ context:
         expression: 'True'
         rove: false
   selectors: {}
-event_log:
-  column_widths:
-    event: 100
-    info: 219
-    timestamp: 100
+loopback_1_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
 sdt_analysis:
   column_config:
     fraction_correct:
       width: 39
     frequency:
-      width: 99
+      width: 59
     level:
       width: 87
     n_correct:
@@ -106,6 +107,9 @@ sdt_analysis:
       width: 39
     z_score:
       width: 39
+sdt_analysis.sdt_plot.ViewBox:
+  y_max: 0.0
+  y_min: 0.0
 signal:
   y_max: 0.508484839859368
   y_min: -0.374682251166166

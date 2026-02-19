@@ -18,7 +18,7 @@ context:
       frequency_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '2.0'
+        - - '4.0'
       level: {}
       level_list:
         rove: false
@@ -26,13 +26,15 @@ context:
         - - '80'
           - '60'
           - '40'
-          - '20'
-          - '0'
+          - '50'
+          - '70'
+          - '30'
+      min_reward_level:
+        expression: '100'
+        rove: false
     results:
       correct: {}
       np_actual_duration: {}
-      psivideo_frame_ts: {}
-      psivideo_frames_written: {}
       reaction_time: {}
       response: {}
       response_time: {}
@@ -58,11 +60,11 @@ context:
         expression: 'False'
         rove: false
       np_duration:
-        expression: '0.1'
+        expression: '0'
         rove: false
       repeat_incorrect:
         rove: false
-        selected: False alarm (nogo) only
+        selected: 'No'
       response_duration:
         expression: '5'
         rove: false

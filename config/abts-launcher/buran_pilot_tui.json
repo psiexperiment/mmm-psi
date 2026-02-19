@@ -21,8 +21,25 @@
       "preference": "Training (nogo).preferences",
       "plugins": [
         "psivideo",
+        "signal_fft_view"
+      ],
+      "mode_notes": {}
+    },
+    {
+      "paradigm": "hyperacusis",
+      "preference": "Phase 1.preferences",
+      "plugins": [
+        "psivideo",
+        "signal_fft_view"
+      ],
+      "mode_notes": {}
+    },
+    {
+      "paradigm": "gap-detection",
+      "preference": "",
+      "plugins": [
         "signal_fft_view",
-        "loopback_1_fft_view"
+        "psivideo"
       ],
       "mode_notes": {}
     }

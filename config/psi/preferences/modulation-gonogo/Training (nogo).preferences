@@ -1,13 +1,12 @@
-IR_sensors:
-  y_max: 5.0
-  y_min: 0.0
 context:
   meta:
     sdt_analysis:
+    - fc
     - stm_depth
     - trial_type
     trial_log:
     - trial_start
+    - fc
     - trial_type
     - stm_depth
     - trial_subtype
@@ -114,10 +113,15 @@ context:
 event_log:
   column_widths:
     event: 100
-    info: 307
+    info: 160
     timestamp: 100
+loopback_1_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
 sdt_analysis:
   column_config:
+    fc:
+      width: 53
     fraction_correct:
       width: 39
     n_correct:
@@ -130,14 +134,21 @@ sdt_analysis:
       width: 39
     z_score:
       width: 39
+sdt_analysis.sdt_plot.ViewBox:
+  y_max: 0.5
+  y_min: -0.5
 signal:
   y_max: 0.1
   y_min: -0.1
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
 trial_log:
   column_widths:
     correct: 39
-    response: 39
+    fc: 53
+    response: 73
     stm_depth: 69
-    trial_start: 39
+    trial_start: 43
     trial_subtype: 78
     trial_type: 39

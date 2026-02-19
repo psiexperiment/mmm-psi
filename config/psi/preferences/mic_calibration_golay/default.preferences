@@ -20,7 +20,7 @@ context:
         rove: false
     golay:
       n_bits:
-        expression: '16'
+        expression: '14'
         rove: false
       output_gain:
         expression: '-20'

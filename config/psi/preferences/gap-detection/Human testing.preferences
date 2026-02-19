@@ -1,33 +1,49 @@
 context:
   meta:
     sdt_analysis:
-    - trial_type
-    - frequency
     - level
+    - frequency
+    - gap
+    - trial_type
     trial_log:
     - trial_type
     - trial_subtype
-    - frequency
+    - gap
     - level
+    - frequency
     - response
     - score
-    - response_time
   parameters:
-    Tone Detection:
+    Gap Detection:
       frequency: {}
       frequency_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '2.0'
+        - - '4.0'
+      gap: {}
+      gap_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '32'
+          - '1'
+          - '4'
+          - '128'
+          - '2'
+          - '8'
+          - '64'
+          - '16'
       level: {}
       level_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '80'
-          - '60'
-          - '40'
-          - '20'
-          - '0'
+        - - '70'
+      min_reward_gap:
+        expression: '100'
+        rove: false
+    hardware_settings:
+      speaker_1:
+        rove: false
+        selected: Speaker 1
     results:
       correct: {}
       np_actual_duration: {}
@@ -43,13 +59,13 @@ context:
       trial_type: {}
     trial:
       continuous_np:
-        expression: 'True'
+        expression: 'False'
         rove: false
       hold_duration:
         expression: '0.0'
         rove: false
       iti_duration:
-        expression: '1'
+        expression: '0.1'
         rove: false
       keep_lights_on:
         expression: 'False'
@@ -58,19 +74,19 @@ context:
         expression: 'False'
         rove: false
       np_duration:
-        expression: '0.1'
+        expression: '0'
         rove: false
       repeat_incorrect:
         rove: false
-        selected: False alarm (nogo) only
+        selected: 'No'
       response_duration:
-        expression: '5'
+        expression: '3.0'
         rove: false
       target_delay:
         expression: '0'
         rove: false
       to_duration:
-        expression: '1'
+        expression: '1.0'
         rove: false
       training_mode:
         expression: 'False'
@@ -95,6 +111,8 @@ sdt_analysis:
       width: 39
     frequency:
       width: 59
+    gap:
+      width: 59
     level:
       width: 87
     n_correct:
@@ -106,20 +124,20 @@ sdt_analysis:
     z_score:
       width: 39
 sdt_analysis.sdt_plot.ViewBox:
-  y_max: 0.0
-  y_min: 0.0
+  y_max: 0.5
+  y_min: -0.5
 signal:
-  y_max: 0.508484839859368
-  y_min: -0.374682251166166
+  y_max: 0.1
+  y_min: -0.1
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
 trial_log:
   column_widths:
-    frequency: 99
-    level: 87
-    response: 40
-    response_time: 67
-    score: 44
-    trial_subtype: 78
-    trial_type: 39
+    frequency: 61
+    gap: 61
+    level: 39
+    response: 100
+    score: 100
+    trial_subtype: 83
+    trial_type: 56

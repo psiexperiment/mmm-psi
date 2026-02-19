@@ -1,38 +1,61 @@
 context:
   meta:
     sdt_analysis:
+    - fc
+    - stm_depth
     - trial_type
-    - frequency
-    - level
     trial_log:
+    - trial_start
+    - fc
     - trial_type
+    - stm_depth
     - trial_subtype
-    - frequency
-    - level
     - response
-    - score
-    - response_time
+    - correct
   parameters:
-    Tone Detection:
-      frequency: {}
-      frequency_list:
+    Stimuli:
+      actual_level: {}
+      bw:
+        expression: '1'
+        rove: false
+      center_level:
+        expression: '60'
+        rove: false
+      cpo:
+        expression: '2'
+        rove: false
+      cps:
+        expression: '4'
+        rove: false
+      fc: {}
+      fc_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '2.0'
-      level: {}
-      level_list:
+        - - '4'
+      level_range:
+        expression: '5'
+        rove: false
+      masker_gain:
+        expression: '0'
+        rove: false
+      max_reward_depth:
+        expression: '-100'
+        rove: false
+      rise_time:
+        expression: '0.25'
+        rove: false
+      stm_depth: {}
+      stm_depth_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '80'
-          - '60'
-          - '40'
-          - '20'
-          - '0'
+        - - '-12'
+          - '-9'
+          - '-15'
+          - '-18'
+          - '-21'
     results:
       correct: {}
       np_actual_duration: {}
-      psivideo_frame_ts: {}
-      psivideo_frames_written: {}
       reaction_time: {}
       response: {}
       response_time: {}
@@ -46,7 +69,7 @@ context:
         expression: 'True'
         rove: false
       hold_duration:
-        expression: '0.0'
+        expression: '0'
         rove: false
       iti_duration:
         expression: '1'
@@ -58,13 +81,13 @@ context:
         expression: 'False'
         rove: false
       np_duration:
-        expression: '0.1'
+        expression: '0'
         rove: false
       repeat_incorrect:
         rove: false
-        selected: False alarm (nogo) only
+        selected: 'No'
       response_duration:
-        expression: '5'
+        expression: '6'
         rove: false
       target_delay:
         expression: '0'
@@ -77,7 +100,7 @@ context:
         rove: false
     trial_sequence:
       max_reference:
-        expression: '5'
+        expression: '100'
         rove: false
       remind_trials:
         expression: '0'
@@ -91,35 +114,35 @@ context:
   selectors: {}
 sdt_analysis:
   column_config:
+    fc:
+      width: 53
     fraction_correct:
       width: 39
-    frequency:
-      width: 59
-    level:
-      width: 87
     n_correct:
       width: 59
     n_trials:
       width: 45
+    stm_depth:
+      width: 69
     trial_type:
       width: 39
     z_score:
       width: 39
 sdt_analysis.sdt_plot.ViewBox:
-  y_max: 0.0
-  y_min: 0.0
+  y_max: 0.5
+  y_min: -0.5
 signal:
-  y_max: 0.508484839859368
-  y_min: -0.374682251166166
+  y_max: 0.1
+  y_min: -0.1
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
 trial_log:
   column_widths:
-    frequency: 99
-    level: 87
-    response: 40
-    response_time: 67
-    score: 44
+    correct: 39
+    fc: 53
+    response: 73
+    stm_depth: 69
+    trial_start: 43
     trial_subtype: 78
     trial_type: 39
