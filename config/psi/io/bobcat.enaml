@@ -64,6 +64,9 @@ enamldef IRChannel(NIDAQHardwareAIChannel): irc:
         threshold = 1.75
         target_fs = 100
 
+	#ContinuousInput:
+		#name << parent.name + '_raw'
+
 
 enamldef IOManifest(PluginManifest): manifest:
     # Since most soundcards do not support DC-coupled analog inputs or outputs,
@@ -199,13 +202,13 @@ enamldef IOManifest(PluginManifest): manifest:
             IRChannel:
                 label = 'Response 1'
                 name = 'resp_contact_1'
-                channel = 'Dev1/ai1'
+                channel = 'Dev1/ai2'
                 fs = NI_FS
 
             IRChannel:
                 label = 'Response 2'
                 name = 'resp_contact_2'
-                channel = 'Dev1/ai2'
+                channel = 'Dev1/ai1'
                 fs = NI_FS
 
             # For the software-timed channels before, the plugins add the
@@ -216,12 +219,12 @@ enamldef IOManifest(PluginManifest): manifest:
                 name = 'room_light'
 
             NIDAQSoftwareDOChannel:
-                channel = '/Dev1/port0/line1'
+                channel = '/Dev1/port0/line2'
                 label = 'Pellet 1'
                 name = 'pellet_1'
 
             NIDAQSoftwareDOChannel:
-                channel = '/Dev1/port0/line2'
+                channel = '/Dev1/port0/line1'
                 label = 'Pellet 2'
                 name = 'pellet_2'
 

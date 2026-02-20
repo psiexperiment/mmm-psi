@@ -20,25 +20,20 @@ context:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '4.0'
+          - '32.0'
       gap: {}
       gap_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '32'
-          - '1'
-          - '4'
-          - '128'
-          - '2'
-          - '8'
+        - - '128'
           - '64'
-          - '16'
       level: {}
       level_list:
         rove: false
         selected: !!python/object/apply:builtins.list
-        - - '70'
+        - - '80'
       min_reward_gap:
-        expression: '100'
+        expression: '10'
         rove: false
     results:
       correct: {}
@@ -67,7 +62,7 @@ context:
         expression: 'False'
         rove: false
       manual_control:
-        expression: 'False'
+        expression: 'True'
         rove: false
       np_duration:
         expression: '0'
@@ -85,7 +80,7 @@ context:
         expression: '1.0'
         rove: false
       training_mode:
-        expression: 'False'
+        expression: 'True'
         rove: false
     trial_sequence:
       max_reference:
@@ -95,7 +90,7 @@ context:
         expression: '0'
         rove: false
       target_probability:
-        expression: '0.75'
+        expression: '1'
         rove: false
       warmup_trials:
         expression: '0'

@@ -1,5 +1,5 @@
 {
-  "logging_level": "info",
+  "logging_level": "warning",
   "standard_notes": [
     "training",
     "testing",
@@ -19,27 +19,18 @@
   ],
   "experiments": [
     {
-      "paradigm": "modulation-2AFC",
-      "preference": "Testing (4 Hz 2 co STM).preferences",
+      "paradigm": "gap-detection",
+      "preference": "Human testing.preferences",
       "plugins": [
-        "psivideo"
+        "psivideo",
+        "signal_fft_view"
       ],
       "mode_notes": {}
     },
     {
-      "paradigm": "tinnitus-2AFC",
-      "preference": "Baseline.preferences",
-      "plugins": [
-        "psivideo"
-      ],
-      "mode_notes": {}
-    },
-    {
-      "paradigm": "hyperacusis",
-      "preference": "",
-      "plugins": [
-        "psivideo"
-      ],
+      "paradigm": "modulation-gonogo",
+      "preference": "Human Testing.preferences",
+      "plugins": [],
       "mode_notes": {}
     }
   ]
