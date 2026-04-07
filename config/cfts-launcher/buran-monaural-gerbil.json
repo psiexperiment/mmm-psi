@@ -46,7 +46,7 @@
     },
     {
       "paradigm": "dpoae_io",
-      "preference": "Gerbil - conventional (500 to 16000 Hz).preferences",
+      "preference": "Gerbil - conventional (2800 to 32000 Hz).preferences",
       "plugins": [
         "microphone_fft_view"
       ],
@@ -56,7 +56,7 @@
     },
     {
       "paradigm": "dpgram",
-      "preference": "Gerbil - conventional DPgram (500 to 16000).preferences",
+      "preference": "Gerbil - conventional (2800 to 32000 Hz).preferences",
       "plugins": [
         "microphone_fft_view"
       ],
@@ -96,8 +96,8 @@
       "paradigm": "efr_sam_epoch",
       "preference": "Gerbil - 4 kHz - sequential.preferences",
       "plugins": [
-        "microphone_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -105,10 +105,10 @@
     },
     {
       "paradigm": "efr_ram_epoch",
-      "preference": "Gerbil - 4 kHz - sequential.preferences",
+      "preference": "Gerbil - 2 and 8 kHz - sequential.preferences",
       "plugins": [
-        "microphone_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "microphone_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -136,8 +136,8 @@
       "paradigm": "abr_io",
       "preference": "Gerbil - 4 kHz conventional.preferences",
       "plugins": [
-        "eeg_fft_view",
-        "eeg_view"
+        "eeg_view",
+        "eeg_fft_view"
       ],
       "mode_notes": {
         "run": ""
@@ -186,7 +186,7 @@
       },
       {
         "paradigm": "dpgram",
-        "preference": "Gerbil - quick DPgram (2000 to 8000).preferences",
+        "preference": "",
         "plugins": [
           "microphone_fft_view"
         ],
@@ -206,7 +206,7 @@
       },
       {
         "paradigm": "dpoae_io",
-        "preference": "Gerbil - conventional (1000 to 16000 Hz).preferences",
+        "preference": "Gerbil - conventional (2800 to 32000 Hz).preferences",
         "plugins": [
           "microphone_fft_view"
         ],
@@ -219,6 +219,17 @@
         "preference": "Gerbil - interleaved ramp.preferences",
         "plugins": [
           "eeg_view"
+        ],
+        "mode_notes": {},
+        "mode": "run",
+        "ear": "selected"
+      },
+      {
+        "paradigm": "efr_ram_epoch",
+        "preference": "Gerbil - 2 and 8 kHz - sequential.preferences",
+        "plugins": [
+          "eeg_view",
+          "microphone_fft_view"
         ],
         "mode_notes": {},
         "mode": "run",
