@@ -100,13 +100,13 @@ context:
         expression: '8'
         rove: false
       remind_trials:
-        expression: '0'
+        expression: '5'
         rove: false
       target_probability:
         expression: '0.5'
         rove: false
       warmup_trials:
-        expression: '0'
+        expression: '5'
         rove: false
   selectors: {}
 sdt_analysis:
