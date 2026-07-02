@@ -1,6 +1,3 @@
-IR_sensors:
-  y_max: 5.0
-  y_min: 0.0
 context:
   meta:
     sdt_analysis:
@@ -36,10 +33,10 @@ context:
         expression: '10'
         rove: false
       masker_gain:
-        expression: '0'
+        expression: '-15'
         rove: false
       max_reward_depth:
-        expression: '-9'
+        expression: '-10'
         rove: false
       rise_time:
         expression: '0.25'
@@ -91,45 +88,47 @@ context:
         expression: '0.25'
         rove: false
       to_duration:
-        expression: '1'
+        expression: '3'
         rove: false
       training_mode:
         expression: 'False'
         rove: false
     trial_sequence:
       max_reference:
-        expression: '5'
+        expression: '8'
         rove: false
       remind_trials:
-        expression: '5'
+        expression: '0'
         rove: false
       target_probability:
-        expression: '1'
+        expression: '0.5'
         rove: false
       warmup_trials:
-        expression: '5'
+        expression: '0'
         rove: false
   selectors: {}
-event_log:
-  column_widths:
-    event: 100
-    info: 2533
-    timestamp: 100
 sdt_analysis:
   column_config:
+    fc:
+      width: 53
     fraction_correct:
       width: 39
     n_correct:
       width: 59
     n_trials:
       width: 45
+    stm_depth:
+      width: 69
     trial_type:
       width: 39
     z_score:
       width: 39
-signal:
-  y_max: 0.1
-  y_min: -0.1
+sdt_analysis.sdt_plot.ViewBox:
+  y_max: 0.0
+  y_min: 0.0
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
 trial_log:
   column_widths:
     correct: 39
