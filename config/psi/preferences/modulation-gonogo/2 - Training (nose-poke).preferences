@@ -1,6 +1,8 @@
 context:
   meta:
     sdt_analysis:
+    - fc
+    - stm_depth
     - trial_type
     trial_log:
     - trial_start
