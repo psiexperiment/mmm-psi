@@ -32,7 +32,7 @@ context:
         selected: !!python/object/apply:builtins.list
         - - '4'
       level_range:
-        expression: '10'
+        expression: '5'
         rove: false
       masker_gain:
         expression: '0'
@@ -134,9 +134,6 @@ sdt_analysis:
       width: 34
     z_score_norm:
       width: 32
-sdt_analysis.sdt_plot.ViewBox:
-  y_max: 0.0
-  y_min: 0.0
 signal:
   y_max: 0.1
   y_min: -0.1
