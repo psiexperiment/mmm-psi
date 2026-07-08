@@ -2,14 +2,14 @@ context:
   meta:
     sdt_analysis:
     - frequency
+    - trial_type
     - gap
-    - trial_type
     trial_log:
-    - trial_type
     - trial_start
     - gap
     - frequency
     - response
+    - trial_type
     - score
   parameters:
     Gap Detection:
@@ -17,7 +17,7 @@ context:
         expression: 'True'
         rove: false
       filter_rolloff:
-        expression: 1/2
+        expression: '0.45'
         rove: false
       frequency: {}
       frequency_list:
@@ -59,6 +59,8 @@ context:
       response_time: {}
       response_ts: {}
       score: {}
+      stim_complete: {}
+      stim_start: {}
       trial_start: {}
       trial_subtype: {}
       trial_type: {}
@@ -67,7 +69,7 @@ context:
         expression: 'False'
         rove: false
       hold_duration:
-        expression: '0.0'
+        expression: '0'
         rove: false
       iti_duration:
         expression: '1'
@@ -79,19 +81,19 @@ context:
         expression: 'False'
         rove: false
       np_duration:
-        expression: '0'
+        expression: '0.25'
         rove: false
       repeat_incorrect:
         rove: false
         selected: False alarm (nogo) only
       response_delay:
-        expression: '0.5'
+        expression: '0.25'
         rove: false
       response_duration:
         expression: '6'
         rove: false
       target_delay:
-        expression: '0.25'
+        expression: '0'
         rove: false
       to_duration:
         expression: '3'
@@ -121,15 +123,13 @@ sdt_analysis:
       width: 59
     gap:
       width: 59
-    level:
-      width: 87
     n_correct:
       width: 59
     n_trials:
       width: 45
     trial_type:
       width: 39
-    z_score:
+    z_score_norm:
       width: 39
 sdt_analysis.sdt_plot.ViewBox:
   y_max: 0.5
@@ -144,7 +144,6 @@ trial_log:
   column_widths:
     frequency: 39
     gap: 122
-    level: 39
     response: 39
     score: 100
     trial_start: 83
