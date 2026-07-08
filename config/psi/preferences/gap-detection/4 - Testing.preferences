@@ -1,32 +1,38 @@
 context:
   meta:
     sdt_analysis:
-    - level
     - frequency
     - gap
     - trial_type
     trial_log:
     - trial_type
-    - trial_subtype
+    - trial_start
     - gap
-    - level
     - frequency
     - response
     - score
   parameters:
     Gap Detection:
+      const_duration:
+        expression: 'True'
+        rove: false
+      filter_rolloff:
+        expression: 1/2
+        rove: false
       frequency: {}
       frequency_list:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '4.0'
-          - '32.0'
       gap: {}
       gap_list:
         rove: false
         selected: !!python/object/apply:builtins.list
         - - '128'
           - '64'
+          - '32'
+          - '16'
+          - '8'
       level: {}
       level_list:
         rove: false
@@ -34,6 +40,18 @@ context:
         - - '80'
       min_reward_gap:
         expression: '10'
+        rove: false
+      n_gap:
+        expression: '4'
+        rove: false
+      stim_duration:
+        expression: '1000'
+        rove: false
+      stim_octaves:
+        expression: 1/4
+        rove: false
+      stim_rise_time:
+        expression: '2.0'
         rove: false
     results:
       correct: {}
@@ -56,44 +74,47 @@ context:
         expression: '0.0'
         rove: false
       iti_duration:
-        expression: '0.1'
+        expression: '1'
         rove: false
       keep_lights_on:
         expression: 'False'
         rove: false
       manual_control:
-        expression: 'True'
+        expression: 'False'
         rove: false
       np_duration:
         expression: '0'
         rove: false
       repeat_incorrect:
         rove: false
-        selected: 'No'
+        selected: False alarm (nogo) only
+      response_delay:
+        expression: '0.5'
+        rove: false
       response_duration:
-        expression: '3.0'
+        expression: '6'
         rove: false
       target_delay:
-        expression: '0.1'
+        expression: '0.25'
         rove: false
       to_duration:
-        expression: '1.0'
+        expression: '3'
         rove: false
       training_mode:
-        expression: 'True'
+        expression: 'False'
         rove: false
     trial_sequence:
       max_reference:
-        expression: '5'
+        expression: '8'
         rove: false
       remind_trials:
-        expression: '0'
+        expression: '5'
         rove: false
       target_probability:
-        expression: '1'
+        expression: '0.5'
         rove: false
       warmup_trials:
-        expression: '0'
+        expression: '5'
         rove: false
   selectors: {}
 sdt_analysis:
@@ -125,10 +146,10 @@ signal_fft_view_vb:
   y_min: -10.0
 trial_log:
   column_widths:
-    frequency: 61
-    gap: 61
+    frequency: 39
+    gap: 122
     level: 39
-    response: 100
+    response: 39
     score: 100
-    trial_subtype: 83
+    trial_start: 83
     trial_type: 56

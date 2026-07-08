@@ -1,0 +1,151 @@
+context:
+  meta:
+    sdt_analysis:
+    - frequency
+    - gap
+    - trial_type
+    trial_log:
+    - trial_type
+    - trial_start
+    - gap
+    - frequency
+    - response
+    - score
+  parameters:
+    Gap Detection:
+      const_duration:
+        expression: 'True'
+        rove: false
+      filter_rolloff:
+        expression: 1/2
+        rove: false
+      frequency: {}
+      frequency_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '4.0'
+      gap: {}
+      gap_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '128'
+      level: {}
+      level_list:
+        rove: false
+        selected: !!python/object/apply:builtins.list
+        - - '80'
+      min_reward_gap:
+        expression: '6'
+        rove: false
+      n_gap:
+        expression: '4'
+        rove: false
+      stim_duration:
+        expression: '1000'
+        rove: false
+      stim_octaves:
+        expression: 1/4
+        rove: false
+      stim_rise_time:
+        expression: '2.0'
+        rove: false
+    results:
+      correct: {}
+      np_actual_duration: {}
+      psivideo_frame_ts: {}
+      psivideo_frames_written: {}
+      reaction_time: {}
+      response: {}
+      response_time: {}
+      response_ts: {}
+      score: {}
+      trial_start: {}
+      trial_subtype: {}
+      trial_type: {}
+    trial:
+      continuous_np:
+        expression: 'False'
+        rove: false
+      hold_duration:
+        expression: '0.0'
+        rove: false
+      iti_duration:
+        expression: '1'
+        rove: false
+      keep_lights_on:
+        expression: 'False'
+        rove: false
+      manual_control:
+        expression: 'False'
+        rove: false
+      np_duration:
+        expression: '0'
+        rove: false
+      repeat_incorrect:
+        rove: false
+        selected: False alarm (nogo) only
+      response_delay:
+        expression: '0.5'
+        rove: false
+      response_duration:
+        expression: '6'
+        rove: false
+      target_delay:
+        expression: '0.25'
+        rove: false
+      to_duration:
+        expression: '3'
+        rove: false
+      training_mode:
+        expression: 'False'
+        rove: false
+    trial_sequence:
+      max_reference:
+        expression: '8'
+        rove: false
+      remind_trials:
+        expression: '0'
+        rove: false
+      target_probability:
+        expression: '1'
+        rove: false
+      warmup_trials:
+        expression: '0'
+        rove: false
+  selectors: {}
+sdt_analysis:
+  column_config:
+    fraction_correct:
+      width: 39
+    frequency:
+      width: 59
+    gap:
+      width: 59
+    level:
+      width: 87
+    n_correct:
+      width: 59
+    n_trials:
+      width: 45
+    trial_type:
+      width: 39
+    z_score:
+      width: 39
+sdt_analysis.sdt_plot.ViewBox:
+  y_max: 0.5
+  y_min: -0.5
+signal:
+  y_max: 0.1
+  y_min: -0.1
+signal_fft_view_vb:
+  y_max: 100.0
+  y_min: -10.0
+trial_log:
+  column_widths:
+    frequency: 39
+    gap: 122
+    level: 39
+    response: 39
+    score: 100
+    trial_start: 83
+    trial_type: 56
