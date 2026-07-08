@@ -6,10 +6,10 @@ context:
     - trial_type
     trial_log:
     - trial_start
-    - trial_type
-    - stm_depth
-    - trial_subtype
     - response
+    - trial_type
+    - trial_subtype
+    - stm_depth
     - correct
   parameters:
     Stimuli:
@@ -58,12 +58,14 @@ context:
       response_time: {}
       response_ts: {}
       score: {}
+      stim_complete: {}
+      stim_start: {}
       trial_start: {}
       trial_subtype: {}
       trial_type: {}
     trial:
       continuous_np:
-        expression: 'True'
+        expression: 'False'
         rove: false
       hold_duration:
         expression: '0'
@@ -83,11 +85,14 @@ context:
       repeat_incorrect:
         rove: false
         selected: False alarm (nogo) only
+      response_delay:
+        expression: '0.25'
+        rove: false
       response_duration:
         expression: '6'
         rove: false
       target_delay:
-        expression: '0.25'
+        expression: '0'
         rove: false
       to_duration:
         expression: '3'
@@ -114,7 +119,7 @@ sdt_analysis:
     fc:
       width: 53
     fraction_correct:
-      width: 39
+      width: 34
     n_correct:
       width: 59
     n_trials:
@@ -122,12 +127,15 @@ sdt_analysis:
     stm_depth:
       width: 69
     trial_type:
-      width: 39
-    z_score:
-      width: 39
+      width: 34
+    z_score_norm:
+      width: 32
 sdt_analysis.sdt_plot.ViewBox:
   y_max: 0.0
   y_min: 0.0
+signal:
+  y_max: 0.1
+  y_min: -0.1
 signal_fft_view_vb:
   y_max: 100.0
   y_min: -10.0
