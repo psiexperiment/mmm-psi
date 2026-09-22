@@ -54,6 +54,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_mode = 'RSE'
                 filter_delay = 0
+                supported_devices = ['speaker']
 
             NIDAQHardwareAOChannel:
                 label = 'B'
@@ -64,6 +65,7 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_mode = 'RSE'
                 filter_delay = 0
+                supported_devices = ['speaker']
 
             NIDAQHardwareAIChannel:
                 label = 'Monitor'
@@ -74,3 +76,4 @@ enamldef IOManifest(PluginManifest): manifest:
                 dtype = 'float64'
                 terminal_mode = AI_MODE
                 start_trigger = 'ao/StartTrigger'
+                supported_devices = ['generic_microphone', 'measurement_microphone']
